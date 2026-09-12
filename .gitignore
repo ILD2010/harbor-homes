@@ -216,3 +216,22 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ==========================================
+# Harbor Homes - Project Specific
+# ==========================================
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Flask development configuration
+.flaskenv
+
+# VS Code workspace settings
+.vscode/
+
+# Local secrets / credentials
+*.secret
+secrets/
