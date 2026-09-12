@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbor Homes | FAQ</title>
+
+    <link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/global.css') }}">
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/faq.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pinyon+Script&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <img src="{{ url_for('static', filename='assets/harbor_homes_logo.png') }}" alt="harbor homes logo">
+
+            <h1>Harbor Homes</h1>
+
+            <p>Where service meets sincerity</p>
+
+            <nav>
+
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+
+                {% if session.get("user_id") %}
+
+                    <a href="{{ url_for('dashboard') }}">
+                        Dashboard
+                    </a>
+
+                {% else %}
+
+                    <a href="{{ url_for('login') }}">
+                        Login
+                    </a>
+
+                {% endif %}
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <section id="faq-hero">
+
+        <div class="faq-hero-content">
+
+            <h2>Questions? We're Here to Help.</h2>
+
+            <p>
+                From scheduling and service requests to estimates and customer accounts,
+                 we want working with Harbor to feel straightforward. Browse answers to 
+                 some of the questions homeowners ask us most often.
+            </p>
+
+            <h3>
+                Can't find what you're looking for? Contact our team
+                 and we'll help point you in the right direction.
+            </h3>
+
+            <a href="{{ url_for('contact') }}" class="contact-btn">Contact</a>
+
+        </div>
+
+    </section>
+
+    <section id="faq-scheduling">
+
+        <div class="faq-scheduling-content">
+
+            <h2>Scheduling & Appointments</h2>
+
+            <h3>How do I request service?</h3>
+
+            <p>
+                You can request service through our online service-request form or contact 
+                Harbor directly. Tell us what you’re experiencing, provide your contact
+                 information, and select a preferred scheduling window. Our team will
+                  review your request and follow up with the appropriate next steps.
+            </p>
+
+            <h3>Do I need to know which service I need?</h3>
+
+            <p>
+                No. You don't need to diagnose the problem yourself before contacting 
+                Harbor. Describe what you're seeing, hearing, or experiencing, and our 
+                team can help determine whether plumbing, electrical, heating and cooling,
+                 or home maintenance is the best place to start.
+            </p>
+
+            <h3>Can I choose a preferred appointment time?</h3>
+
+            <p>
+                Yes. When submitting an online request, you can provide your preferred day 
+                and time window. Requested times are preferences rather than confirmed appointments.
+                 Harbor will contact you to confirm scheduling and availability.
+            </p>
+
+            <h3>What happens after I submit a service request?</h3>
+
+            <p>
+                Our team reviews the information you provided, determines the appropriate service
+                 category, and contacts you using your preferred contact method. Once the details 
+                 and scheduling are confirmed, Harbor coordinates the appropriate technician or
+                  service team.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="faq-services">
+
+        <div class="faq-services-content">
+
+            <h2>Services</h2>
+
+            <h3>What types of work does Harbor provide?</h3>
+
+            <p>
+                Harbor provides residential plumbing, electrical, heating and cooling, and general 
+                home-maintenance services. Individual services range from troubleshooting and repairs
+                 to installations, preventative maintenance, and system replacements.
+            </p>
+
+            <h3>Does Harbor handle small home repairs?</h3>
+
+            <p>
+                Yes. Our home-maintenance services are intended for many of the smaller repairs 
+                and preventative tasks that don't necessarily require a larger plumbing, electrical,
+                 or HVAC project.
+            </p>
+
+            <h3>Can Harbor help with more than one problem during a visit?</h3>
+
+            <p>
+                Let us know about each issue when requesting service. Depending on the type of work 
+                involved, scheduling, and the technicians required, our team can help determine 
+                whether multiple needs can be addressed together or should be scheduled separately.
+            </p>
+
+            <h3>What if the service I need isn't listed on the website?</h3>
+
+            <p>
+                Contact us anyway. Our website highlights common residential services, but it may 
+                not represent every situation our team can assist with. Describe the problem and
+                 Harbor can help determine whether it falls within our services.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="faq-estimate">
+
+        <div class="faq-estimate-content">
+
+            <h2>Estimates & Pricing</h2>
+
+            <h3>Can I get an estimate before work begins?</h3>
+
+            <p>
+                Pricing depends on the type of service, the condition of the system, and the work 
+                required. When possible, Harbor will explain the recommended work and applicable
+                 pricing before proceeding. Some situations may require an in-person evaluation 
+                 before an accurate estimate can be provided.
+            </p>
+
+            <h3>Why can't every service have a fixed price online?</h3>
+
+            <p>
+                Homes and service problems vary considerably. Two issues that appear similar can 
+                require different parts, labor, diagnostics, or repairs. Rather than presenting 
+                pricing that may not accurately represent your situation, Harbor evaluates the 
+                specific service need before determining the appropriate work.
+            </p>
+
+            <h3>Will additional work be discussed with me?</h3>
+
+            <p>
+                If a technician identifies additional concerns or recommends work beyond the original 
+                request, the situation and available next steps should be discussed with the homeowner
+                 before additional work proceeds.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="faq-emergency">
+
+        <div class="faq-emergency-content">
+
+            <h2>Emergency & Urgent Service</h2>
+
+            <h3>What qualifies as an urgent service request?</h3>
+
+            <p>
+                Significant water leaks, certain electrical concerns, and loss of essential heating 
+                or cooling during extreme conditions are examples of situations that may require
+                 faster attention. Contact Harbor and provide as much information as possible so 
+                 our team can determine the appropriate response.
+            </p>
+
+            <h3>Should I use Harbor's website during a life-threatening emergency?</h3>
+
+            <p>
+                No. The online service-request system is not a replacement for emergency responders. 
+                If you believe there is an immediate threat involving fire, gas exposure, serious
+                 electrical danger, injury, or another threat to life or safety, contact the appropriate 
+                 emergency service.
+            </p>
+
+            <h3>Does selecting “Urgent” guarantee immediate service?</h3>
+
+            <p>
+                No. Selecting an urgent request helps Harbor understand the severity of the situation, 
+                but it does not guarantee immediate availability or a specific response time. Our 
+                team will evaluate the request and communicate available next steps.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="faq-accounts">
+
+        <div class="faq-accounts-content">
+
+            <h2>Do I need an account to request service?</h2>
+
+            <p>
+                No. Homeowners can contact Harbor and submit a service request without creating an account.
+            </p>
+
+            <h3>Why should I create a Harbor account?</h3>
+
+            <p>
+                A Harbor account provides one place to manage your relationship with our service team. 
+                As portal features become available, customers can use their account to review 
+                service requests, access service history, manage account information, and keep 
+                track of work performed on their home.
+            </p>
+
+            <h3>Can I view previous service requests?</h3>
+
+            <p>
+                Registered customers can use the Harbor customer portal to access service 
+                information associated with their account as supported by the portal.
+            </p>
+
+            <h3>I forgot my password. What should I do?</h3>
+
+            <p>
+                Use the password-reset option on the login page to begin recovering access to your
+                 account. For your security, Harbor staff should never need to ask you for your
+                  account password.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="faq-communication">
+
+        <div class="faq-communication-content">
+
+            <h2>How will Harbor contact me about my request?</h2>
+
+            <p>
+                When submitting a service request, you can provide your contact information and 
+                preferred method of communication. Harbor will use the information associated 
+                with your request to follow up about service details and scheduling.
+            </p>
+
+            <h3>What information should I include in my request?</h3>
+
+            <p>
+                Describe what is happening, where in the home you're experiencing the problem, 
+                when you first noticed it, and anything else that may help our team understand 
+                the situation. You do not need to provide a technical diagnosis.
+            </p>
+
+            <h3>Should I submit sensitive information through the service form?</h3>
+
+            <p>
+                No. Only provide information relevant to your service request. Do not include 
+                passwords, financial account information, Social Security numbers, or other 
+                unnecessary sensitive information in the problem-description field.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="final-cta">
+
+        <div class="final-cta-content">
+
+            <h2>Still Have Questions?</h2>
+
+            <p>
+                Every home and every service request is a little different. If you couldn't find 
+                the answer you need, Harbor's team can help you determine the right next step.
+            </p>
+
+            <h3>Contact Harbor</h3>
+            <a href="{{ url_for('contact') }}" class="contact-btn">Contact</a>
+
+            <h3>Request Service</h3>
+            <a href="{{ url_for('contact') }}#service-form" class="request-service-btn">Request Service</a>
+
+            <h3>Explore Services</h3>
+            <a href="{{ url_for('services') }}#services-category-overview" class="services-btn">Services</a>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <img src="{{ url_for('static', filename='assets/harbor_homes_logo.png') }}" alt="harbor homes logo">
+            <h2>Harbor Homes</h2>
+            <p>Where service meets sincerity</p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>company</h3>
+            
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+                <a href="{{ url_for('register') }}">Register</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('staff_login') }}">Staff Portal</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Product</h3>
+
+            <a href="{{ url_for('services') }}">Services</a>
+        
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Resources</h3>
+
+            <a href="{{ url_for('faq') }}">FAQ</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Legal</h3>
+
+            <a href="{{ url_for('privacy') }}">privacy</a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                 © 2026 Harbor Homes. All Rights Reserved
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

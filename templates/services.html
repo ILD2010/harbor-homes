@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbor Homes | Services</title>
+
+    <link
+        rel="stylesheet" 
+        href="{{ url_for('static', filename='css/global.css') }}">
+    <link 
+        rel="stylesheet" 
+        href="{{ url_for('static', filename='css/services.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pinyon+Script&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+         <div class="header-content">
+
+            <img src="{{ url_for('static', filename='assets/harbor_homes_logo.png')}}" alt="harbor homes logo">
+
+            <h1>Harbor Homes</h1>
+
+            <p>Where service meets sincerity</p>
+
+            <nav>
+
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+
+                {% if session.get("user_id") %}
+
+                    <a href="{{ url_for('dashboard') }}">
+                        Dashboard
+                    </a>
+
+                {% else %}
+
+                    <a href="{{ url_for('login') }}">
+                        Login
+                    </a>
+
+                {% endif %}
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <section id="services-hero">
+
+        <div class="services-hero-content">
+
+            <h2>One Home. One Team. More Ways to Help.</h2>
+
+            <p>
+                Every home needs attention from time to time. Harbor Homes brings
+                 plumbing, electrical, heating and cooling, and general home 
+                 maintenance together under one dependable team. Whether you're 
+                 dealing with an unexpected problem or planning ahead, we're here 
+                 to help you find the right service for your home.
+            </p>
+
+            <h3>Family-owned and serving local homeowners since 2008.</h3>
+
+        </div>
+
+    </section>
+
+    <section id="services-category-overview">
+
+        <div class="services-category-content">
+
+            <h2>What Can We Help With?</h2>
+
+            <p>
+                Choose a service category below to learn more about how Harbor can help.
+                 Not sure which service you need? That's okay—tell us what's happening 
+                 and our team can help point you in the right direction.
+            </p>
+
+            <div class="category-card">
+
+                <h2>Plumbing</h2>
+
+                <p>
+                    Leaks, drains, fixtures, repairs, installations, and other 
+                    residential plumbing needs.
+                </p>
+
+                <h3>Explore Plumbing</h3>
+
+                <a href="#plumbing" class="plumbing-btn">Plumbing</a>
+
+            </div>
+
+            <div class="category-card">
+
+                <h2>Electrical</h2>
+
+                <p>
+                    Troubleshooting, repairs, installations, outlets, lighting, panels,
+                     and residential electrical service.
+                </p>
+
+                <h3>Explore Electrical</h3>
+
+                <a href="#electrical" class="electrical-btn">Electrical</a>
+
+            </div>
+
+            <div class="category-card">
+
+                <h2>Heating & Cooling</h2>
+
+                <p>
+                    HVAC diagnostics, repairs, maintenance, replacements, and year-round
+                     comfort services.
+                </p>
+
+                <h3>Explore Heating & Cooling</h3>
+
+                <a href="#hvac" class="hvac-btn">HVAC</a>
+
+            </div>
+
+            <div class="category-card">
+
+                <h2>Home Maintenance</h2>
+
+                <p>
+                    General repairs and preventative maintenance that help keep your
+                     home working the way it should.
+                </p>
+
+                <h3>Explore Home Maintenance</h3>
+
+                <a href="#home-maintenance" class="home-maintenance-btn">Home Maintenance</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="plumbing">
+
+        <div class="plumbing-content">
+
+            <h2>Residential Plumbing Services</h2>
+
+            <p>
+                Plumbing problems can range from a minor inconvenience to something 
+                that puts your home at risk. Harbor provides residential plumbing 
+                services designed to identify problems, make dependable repairs,
+                 and help homeowners keep their plumbing systems working properly.
+            </p>
+
+            <ul>
+
+                <li>Leak detection and repair</li>
+                <li>Faucet and fixture repair</li>
+                <li>Toilet repair and replacement</li>
+                <li>Drain troubleshooting and clearing</li>
+                <li>Pipe repairs</li>
+                <li>Garbage disposal service</li>
+                <li>Water-line concerns</li>
+                <li>Plumbing fixture installation</li>
+                <li>Preventative plumbing maintenance</li>
+
+            </ul>
+
+            <h3>
+                Have a plumbing problem that isn't listed? Tell us what's happening 
+                and our team can help determine the appropriate next step.
+            </h3>
+
+            <a href="{{ url_for('contact') }}" class="contact-btn">Contact</a>
+
+        </div>
+
+    </section>
+
+    <section id="electrical">
+
+        <div class="electrical-content">
+
+            <h2>Residential Electrical Services</h2>
+
+            <p>
+                Electrical problems deserve careful attention. Harbor's residential 
+                electrical services help homeowners troubleshoot issues, maintain 
+                important electrical systems, and complete repairs and installations 
+                throughout the home.
+            </p>
+
+            <ul>
+
+                <li>Electrical troubleshooting</li>
+                <li>Outlet and switch repair</li>
+                <li>Lighting installation and repair</li>
+                <li>Ceiling fan installation</li>
+                <li>Circuit and breaker concerns</li>
+                <li>Electrical panel service</li>
+                <li>Dedicated circuit installation</li>
+                <li>Smoke and carbon-monoxide detector installation</li>
+                <li>General electrical repairs</li>
+                <li>Electrical safety evaluations</li>
+                
+            </ul>
+
+            <h3>
+                Is a service you need not listed? Contact us for additional
+                help, and our technicians can help provide further guidance.
+            </h3>
+
+            <a href="{{ url_for('contact') }} class="contact-btn">Contact</a>
+
+        </div>
+
+    </section>
+
+    <section id="hvac">
+
+        <div class="hvac-content">
+
+            <h2>Heating & Cooling Services</h2>
+
+            <p>
+                Your heating and cooling systems play a major role in keeping your
+                home comfortable throughout the year. Harbor provides residential 
+                HVAC services to help diagnose problems, maintain equipment, restore
+                comfort, and help homeowners understand when repair or replacement
+                may be appropriate.
+            </p>
+
+            <ul>
+
+                <li>Heating system diagnostics</li>
+                <li>Air-conditioning diagnostics</li>
+                <li>HVAC repair</li>
+                <li>Seasonal system maintenance</li>
+                <li>Thermostat service and installation</li>
+                <li>Airflow troubleshooting</li>
+                <li>Filter and maintenance assistance</li>
+                <li>Heating system replacement</li>
+                <li>Air-conditioning system replacement</li>
+                <li>Preventative HVAC service</li>
+
+            </ul>
+
+            <h3>Reach out to us for HVAC service or addional help.</h3>
+
+            <a href="{{ url_for('contact') }}" class="contact-btn">Contact</a>
+
+        </div>
+
+    </section>
+
+    <section id="home-maintenance">
+
+        <div class="home-maintenance-content">
+
+            <h2>Home Maintenance & Repair</h2>
+
+            <p>
+                Not every problem around the house requires a major project.
+                 Harbor's home-maintenance services help homeowners take care 
+                 of everyday repairs, preventative maintenance, and smaller 
+                 projects before they become larger problems.
+            </p>
+
+            <ul>
+
+                <li>Minor household repairs</li>
+                <li>Door and hardware adjustments</li>
+                <li>Fixture replacement</li>
+                <li>Caulking and sealing</li>
+                <li>Weatherproofing</li>
+                <li>Preventative home maintenance</li>
+                <li>Minor installation projects</li>
+                <li>Seasonal maintenance</li>
+                <li>General home-service assessments</li>
+
+            </ul>
+
+            <h3>Request Home Maintenance</h3>
+
+            <a href="{{ url_for('contact') }}" class="contact-btn">Contact</a>
+
+        </div>
+
+    </section>
+
+    <section id="emergency-service">
+
+        <div class="emergency-services-content">
+
+            <h2>When the Problem Can't Wait</h2>
+
+            <p>
+                Some home-service problems require more immediate attention.
+                 Significant plumbing leaks, electrical concerns, loss of 
+                 heating or cooling during extreme conditions, and other 
+                 urgent situations can quickly affect the safety or usability 
+                 of your home.
+            </p>
+
+            <p>
+                Harbor provides assistance for qualifying urgent service needs 
+                and can help determine the appropriate next step based on the 
+                situation.
+            </p>
+
+            <h3>Examples of potentially urgent problems</h3>
+
+            <div class="emergency-card">
+
+                <h3>Major Water Leaks</h3>
+                <p>Unexpected or uncontrolled water that could damage the home.</p>
+
+            </div>
+
+            <div class="emergency-card">
+
+                <h3>Electrical Concerns</h3>
+                <p>Electrical problems involving unusual heat, odors, sparking, or loss of power to important systems.</p>
+
+            </div>
+
+            <div class="emergency-card">
+
+                <h3>Heating & Cooling Failure</h3>
+                <p>Loss of essential heating or cooling when conditions may create a serious concern.</p>
+
+            </div>
+
+            <h3>Request Urgent Service</h3>
+
+            <a href="{{ url_for('contact') }}" class="contact-btn">Contact</a>
+
+            <div class="important-notice">
+
+                <p>
+                    If you believe there is an immediate threat to life, fire, gas 
+                    exposure, or another emergency requiring emergency responders, 
+                    contact the appropriate emergency service rather than submitting 
+                    an online Harbor service request.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="service-finder">
+
+        <div class="service-finder-content">
+
+            <h2>Not Sure Which Service You Need?</h2>
+
+            <p>
+                You don't need to diagnose the problem before contacting Harbor. 
+                Tell us what you're seeing, hearing, or experiencing in your home
+                 and we'll help determine which service is the best place to start.
+            </p>
+
+            <div class="service-help-card">
+
+                <blockquote>
+                    “There's water underneath my sink.”
+                </blockquote>
+
+                <p class="help-recommendation">Start with Plumbing.</p>
+
+            </div>
+
+            <div class="service-help-card">
+
+                <blockquote>
+                    “Half of the outlets in one room stopped working.”
+                </blockquote>
+
+                <p class="help-recommendation">Start with Electrical.</p>
+
+            </div>
+
+            <div class="service-help-card">
+
+                <blockquote>
+                    “My AC is running, but the house isn't getting cooler.”
+                </blockquote>
+
+                <p class="help-recommendation">
+                    Start with Heating & Cooling.
+                </p>
+
+            </div>
+
+            <div class="service-help-card">
+
+                <blockquote>
+                    “I have several smaller repairs around the house.”
+                </blockquote>
+
+                <p class="help-recommendation">Start with Home Maintenance.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="final-cta">
+
+        <div class="final-cta-content">
+
+            <h2>Let's Get Your Home Taken Care Of.</h2>
+
+            <p>
+                Whether you know exactly what you need or you're still trying to 
+                understand the problem, Harbor is ready to help you take the next
+                 step.
+            </p>
+
+            <a href="{{ url_for('contact') }}" class="contact-btn">Request Service</a>
+            <a href="{{ url_for('contact') }}" class="request-help-btn">Request Help</a>
+
+        </div>
+        
+    </section>
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <img src="{{ url_for('static', filename='assets/harbor_main_logo.png') }}" alt="harbor homes logo">
+            <h2>Harbor Homes</h2>
+            <p>Where service meets sincerity</p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>company</h3>
+            
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('staff_login') }}">Staff Portal</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Product</h3>
+
+            <a href="{{ url_for('services') }}">Services</a>
+        
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Resources</h3>
+
+            <a href="{{ url_for('faq') }}">FAQ</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Legal</h3>
+
+            <a href="{{ url_for('privacy') }}">privacy</a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                 © 2026 Harbor Homes. All Rights Reserved
+            </p>
+
+        </div>
+
+    </footer>
+</body>
+</html>

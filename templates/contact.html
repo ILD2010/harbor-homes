@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbor Homes | Contact</title>
+
+    <link 
+        rel="stylesheet" 
+        href="{{ url_for('static', filename='css/global.css') }}">
+    <link 
+        rel="stylesheet" 
+        href="{{ url_for('static', filename='css/contact.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pinyon+Script&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <img src="{{ url_for('static', filename='assets/harbor_homes_logo.png') }}" alt="harbor homes logo">
+
+            <h1>Harbor Homes</h1>
+
+            <p>Where service meets sincerity</p>
+
+            <nav>
+
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+
+                {% if session.get("user_id") %}
+
+                    <a href="{{ url_for('dashboard') }}">
+                        Dashboard
+                    </a>
+
+                {% else %}
+
+                    <a href="{{ url_for('login') }}">
+                        Login
+                    </a>
+
+                {% endif %}
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <section id="contact-hero">
+
+        <div class="contact-hero-content">
+
+            <h2>Tell Us What Your Home Needs</h2>
+
+            <p>
+                Harbor makes it easy to get in touch, whether you need help 
+                with a repair, want to request service, or simply have a question
+                 before scheduling. Tell us what's happening and our team will 
+                 help determine the right next step.
+            </p>
+
+            <h3>Family-owned and serving local homeowners since 2008.</h3>
+
+        </div>
+
+    </section>
+
+    <section id="contact-options">
+
+        <div class="contact-options-content">
+
+            <h2>Choose the Best Way to Reach Us</h2>
+
+            <div class="contact-cards">
+
+                <h3>Call Harbor</h3>
+                <p>Speak directly with our team for scheduling, service questions, or urgent concerns.</p>
+
+            </div>
+
+            <div class="contact-cards">
+
+                <h3>Email Harbor</h3>
+                <p>Send us a message if your request is not time-sensitive or you need to provide additional information.</p>
+
+            </div>
+
+            <div class="contact-cards">
+
+                <h3>Request Service Online</h3>
+                <p>Use the form below to tell us whats happening in your home and what kind of help you may need.</p>
+
+            </div>
+
+            <div class="contact-cards">
+
+                <h2>Service Area / Location</h2>
+                <p>View Harbor's service area and provider location.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="service-form">
+
+        <div class="service-form-content">
+
+            <h2>Request Service</h2>
+
+            <p>
+                Provide as much information as you can. You do not need to diagnose 
+                the problem yourself—describe what you are seeing, hearing, or
+                 experiencing and Harbor can use that information to determine 
+                 the appropriate service.
+            </p>
+
+            <form
+                id="service-request-form"
+                method="POST"
+                action="{{ url_for('contact') }}">
+
+                <h3>Contact Information</h3>
+
+                <input
+                    type="text"
+                    name="full-name"
+                    id="full-name"
+                    placeholder="Enter Full Name">
+
+                <label for="full-name">Full Name</label>
+
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Enter Email Address">
+
+                <label for="email">Email</label>
+
+                <input
+                    type="tel"
+                    name="phone-number"
+                    id="phone-number"
+                    placeholder="Enter Phone Number">
+
+                <label for="phone-number">Phone Number</label>
+
+                <label for="preffered-contact">Preffered Contact</label>
+
+                <select name="preffered-contact" id="preffered-contact">
+
+                    <option value="empty-placeholder"> </option>
+                    <option value="phone">Phone</option>
+                    <option value="email">Email</option>
+                    <option value="text">text</option>
+
+                </select>
+
+                <h3>Service information</h3>
+
+                <select name="service-type" id="service-type">
+
+                    <option value="empty-placeholder"> </option>
+                    <option value="plumbing">Plumbing</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="hvac">Heating & Cooling</option>
+                    <option value="home-maintenance">Home Maintenance</option>
+
+                </select>
+
+                <label for="service-type">Service Type</label>
+
+                <select name="urgency" id="urgency">
+
+                    <option value="empty-placeholder"> </option>
+                    <option value="routine">Routine</option>
+                    <option value="soon">Soon</option>
+                    <option value="urgent">Urgent</option>
+                    <option value="not-sure">Not Sure</option>
+
+                </select>
+
+                <label for="urgency">Urgency</label>
+
+                <input
+                    type="text"
+                    name="address"
+                    id="address"
+                    placeholder="Enter Address">
+
+                <label for="address">Address</label>
+
+                <input
+                    type="text"
+                    name="zip-code"
+                    id="zip-code"
+                    inputmode="numeric"
+                    placeholder="Enter zip-code">
+
+                <label for="zip-code">Zip-Code</label>
+
+                <textarea
+                    name="problem-description"
+                    id="problem-description"
+                    placeholder="Enter description here..."></textarea>
+
+                <label for="problem-description">Problem description</label>
+
+                <h3>Scheduling</h3>
+
+                <input
+                    type="date"
+                    name="preffered-date"
+                    id="preffered-date"
+                    placeholder="Enter Preffered Date">
+
+                <label for="preffered-date">Preffered Date</label>
+
+                <input
+                    type="time"
+                    name="preffered-time"
+                    id="preffered-time"
+                    placeholder="Enter Preffered Time">
+
+                <label for="preffered-time">Preffered Time</label>
+
+                <button
+                    type="submit"
+                    id="send-btn">
+                    Submit Form
+                </button>
+
+            </form>
+        
+        </div>
+    </section>
+
+    <section id="privacy-assurance">
+
+        <div class="privacy-assurance-content">
+
+            <h2>Your Information Stays Relevant to Your Request</h2>
+
+            <p>
+                The information submitted through this form is intended to
+                 help Harbor understand your service needs and contact you 
+                 about your request. Please avoid submitting unnecessary
+                  sensitive information through the service-request form.
+            </p>
+
+            <h4>By submitting this form, you agree that Harbor may contact you regarding this service request.</h4>
+
+        </div>
+
+    </section>
+
+    <section id="next-steps">
+
+        <div class="next-steps-content">
+
+            <h2>What Happens After You Submit?</h2>
+
+            <div class="submit-steps">
+
+                <h3>Step 1 — We Review Your Request</h3>
+                <p>
+                    Harbor reviews the information you provided and identifies 
+                    the appropriate service team.
+                </p>
+
+            </div>
+
+            <div class="submit-steps">
+
+                <h3>Step 2 — We Contact You</h3>
+                <p>
+                    A member of the Harbor team follows up using your preferred 
+                    contact method to clarify details and discuss scheduling.
+                </p>
+
+            </div>
+
+            <div class="submit-steps">
+
+                <h3>Step 3 — Service Is Scheduled</h3>
+                <p>
+                    Once the service and timing are confirmed, Harbor coordinates 
+                    the appropriate technician or team.
+                </p>
+
+            </div>
+
+            <div class="submit-steps">
+
+                <h3>Step 4 — Keep Track</h3>
+                <p>
+                    Customers with a Harbor account can eventually review service 
+                    requests and history through the customer portal.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="emergency-notice">
+
+        <div class="emergency-notice-content">
+
+            <h2>Need Urgent Help?</h2>
+
+            <p>
+                Some home-service problems may require faster attention. Significant
+                 water leaks, electrical concerns, and loss of heating or cooling 
+                 during extreme conditions may require urgent service.
+            </p>
+
+            <h3>View Emergency Services</h3>
+
+            <a href="{{ url_for('services') }}#emergency-service" class="emergency-services-btn">Contact</a>
+
+            <h4>
+                If you believe there is an immediate threat to life, fire, gas 
+                exposure, or another emergency requiring emergency responders, 
+                contact the appropriate emergency service instead of submitting 
+                an online Harbor service request.
+            </h4>
+
+        </div>
+
+    </section>
+
+    <section id="faq-help">
+
+        <div class="faq-help-content">
+
+            <h2>Not Ready to Submit a Request?</h2>
+
+            <p>
+                If you have questions about estimates, scheduling, service areas, 
+                emergency service, or what to expect during an appointment, our 
+                FAQ may already have the answer.
+            </p>
+
+            <a href="{{ url_for('faq') }}" class="faq-btn">FAQ</a>
+
+            <h3>Explore Services</h3>
+
+            <a href="{{ url_for('services') }}" class="services-btn">Services</a>
+
+        </div>
+
+    </section>
+
+    <section id="final-reassurance">
+
+        <div class="final-reassurance-btn">
+
+            <h2>We're Here to Help You Find the Right Next Step</h2>
+
+            <p>
+                Whether you know exactly what service you need or you're still 
+                trying to understand the problem, Harbor is ready to help you 
+                get started.
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <img src="{{ url_for('static', filename='assets/harbor_main_logo.png') }}" alt="harbor homes logo">
+            <h2>Harbor Homes</h2>
+            <p>Where service meets sincerity</p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>company</h3>
+            
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('staff_login') }}">Staff Portal</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Product</h3>
+
+            <a href="{{ url_for('services') }}">Services</a>
+        
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Resources</h3>
+
+            <a href="{{ url_for('faq') }}">FAQ</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Legal</h3>
+
+            <a href="{{ url_for('privacy') }}">privacy</a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                 © 2026 Harbor Homes. All Rights Reserved
+            </p>
+
+        </div>
+
+    </footer>
+</body>
+</html>

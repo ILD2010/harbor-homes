@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Harbor Homes | Account Settings</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/account-settings.css') }}"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <header id="settings-header">
+
+        <div class="header-brand">
+            <p>Harbor Customer Portal</p>
+        </div>
+
+        <a
+            class="dashboard-link"
+            href="{{ url_for('dashboard') }}"
+        >
+            Back to Dashboard
+        </a>
+
+    </header>
+
+
+    <main id="account-settings">
+
+        <!-- PAGE HEADING -->
+
+        <div class="settings-heading">
+
+            <p class="settings-eyebrow">
+                Account
+            </p>
+
+            <h1>Account Settings</h1>
+
+            <p>
+                Manage your account information, security, and privacy.
+            </p>
+
+        </div>
+
+
+        <div class="settings-layout">
+
+
+            <!-- SETTINGS NAVIGATION -->
+
+            <aside class="settings-navigation">
+
+                <p class="settings-navigation-title">
+                    Settings
+                </p>
+
+                <nav aria-label="Account settings">
+
+                    <a href="#personal-information">
+                        Personal Information
+                    </a>
+
+                    <a href="#security">
+                        Security
+                    </a>
+
+                    <a href="#privacy">
+                        Privacy & Data
+                    </a>
+
+                    <a href="#danger-zone">
+                        Danger Zone
+                    </a>
+
+                </nav>
+
+            </aside>
+
+
+            <!-- SETTINGS CONTENT -->
+
+            <div class="settings-content">
+
+
+                <!-- PERSONAL INFORMATION -->
+
+                <section
+                    id="personal-information"
+                    class="settings-section"
+                >
+
+                    <div class="section-heading">
+
+                        <h2>Personal Information</h2>
+
+                        <p>
+                            Update the contact information associated
+                            with your Harbor Homes account.
+                        </p>
+
+                    </div>
+
+
+                    <form method="POST">
+
+                        <div class="form-field">
+
+                            <label for="full-name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="full-name"
+                                name="full_name"
+                                value="{{ user[1] }}"
+                                autocomplete="name"
+                            >
+
+                            {% if errors.get("full_name") %}
+                                <p class="field-error">
+                                    {{ errors["full_name"] }}
+                                </p>
+                            {% endif %}
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value="{{ user[2] }}"
+                                autocomplete="email"
+                            >
+
+                            {% if errors.get("email") %}
+                                <p class="field-error">
+                                    {{ errors["email"] }}
+                                </p>
+                            {% endif %}
+
+                            <p class="field-help">
+                                This email is used to sign in to your account.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="phone-number">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone-number"
+                                name="phone_number"
+                                value="{{ user[3] or '' }}"
+                                autocomplete="tel"
+                            >
+
+                            {% if errors.get("phone_number") %}
+                                <p class="field-error">
+                                    {{ errors["phone_number"] }}
+                                </p>
+                            {% endif %}
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button
+                                type="submit"
+                                name="action"
+                                value="update_profile"
+                            >
+                                Save Changes
+                            </button>
+
+                            {% if profile_success %}
+                                <p class="form-success">
+                                    {{ profile_success }}
+                                </p>
+                            {% endif %}
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <!-- SECURITY -->
+
+                <section
+                    id="security"
+                    class="settings-section"
+                >
+
+                    <div class="section-heading">
+
+                        <h2>Security</h2>
+
+                        <p>
+                            Change the password used to access your
+                            Harbor Homes account.
+                        </p>
+
+                    </div>
+
+
+                    <form method="POST">
+
+                        <div class="form-field">
+
+                            <label for="current-password">
+                                Current Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="current-password"
+                                name="current_password"
+                                autocomplete="current-password"
+                            >
+
+                            {% if errors.get("current_password") %}
+                                <p class="field-error">
+                                    {{ errors["current_password"] }}
+                                </p>
+                            {% endif %}
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="new-password">
+                                New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="new-password"
+                                name="new_password"
+                                autocomplete="new-password"
+                            >
+
+                            {% if errors.get("new_password") %}
+                                <p class="field-error">
+                                    {{ errors["new_password"] }}
+                                </p>
+                            {% endif %}
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="confirm-password">
+                                Confirm New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirm-password"
+                                name="confirm_password"
+                                autocomplete="new-password"
+                            >
+
+                            {% if errors.get("confirm_password") %}
+                                <p class="field-error">
+                                    {{ errors["confirm_password"] }}
+                                </p>
+                            {% endif %}
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button
+                                type="submit"
+                                name="action"
+                                value="change_password"
+                            >
+                                Change Password
+                            </button>
+
+                            {% if password_success %}
+                                <p class="form-success">
+                                    {{ password_success }}
+                                </p>
+                            {% endif %}
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <!-- PRIVACY -->
+
+                <section
+                    id="privacy"
+                    class="settings-section"
+                >
+
+                    <div class="section-heading">
+
+                        <h2>Privacy & Your Data</h2>
+
+                        <p>
+                            Learn how Harbor Homes handles information
+                            associated with your account and service requests.
+                        </p>
+
+                    </div>
+
+
+                    <div class="privacy-information">
+
+                        <h3>Information associated with your account</h3>
+
+                        <ul>
+                            <li>Name and contact information</li>
+                            <li>Service addresses</li>
+                            <li>Service request history</li>
+                            <li>Account and service activity</li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="section-actions">
+
+                        <a href="{{ url_for('privacy') }}">
+                            View Privacy Policy
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- DANGER ZONE -->
+
+                <section
+                    id="danger-zone"
+                    class="settings-section danger-zone"
+                >
+
+                    <div class="section-heading">
+
+                        <h2>Danger Zone</h2>
+
+                        <p>
+                            Permanently delete your Harbor Homes customer account.
+                        </p>
+
+                    </div>
+
+
+                    <div class="delete-account">
+
+                        <div class="delete-account-info">
+
+                            <h3>Delete Account</h3>
+
+                            <p>
+                                Deleting your account is permanent. You will lose
+                                access to your customer account and account features.
+                            </p>
+
+                        </div>
+
+
+                        <!--
+                            Opens confirmation panel.
+                            Does NOT submit anything.
+                        -->
+
+                        <button
+                            type="button"
+                            id="open-delete-confirmation"
+                            class="delete-account-button"
+                        >
+                            Delete Account
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <div
+        id="delete-error-data"
+        data-error="{{ errors.get('delete_password', '') }}"
+        hidden
+    ></div>
+    
+    <script
+        src="{{ url_for('static', filename='js/account-settings.js') }}"
+    ></script>
+
+</body>
+
+</html>

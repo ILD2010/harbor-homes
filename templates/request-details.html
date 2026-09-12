@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Harbor Homes | Request Details</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/request-details.css') }}"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <header id="request-header">
+
+        <div>
+            <p>Harbor Customer Portal</p>
+            <h1>Request #{{ service_request[0] }}</h1>
+        </div>
+
+        <a href="{{ url_for('my_requests') }}">
+            Back to My Requests
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <section id="request-details">
+
+            <h2>Service Details</h2>
+
+            <p>
+                <strong>Service:</strong>
+                {{ service_request[1] }}
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                {{ service_request[2] }}
+            </p>
+
+            <p>
+                <strong>Urgency:</strong>
+                {{ service_request[3] }}
+            </p>
+
+
+            {% if service_request[4] %}
+
+                <p>
+                    <strong>Service Address:</strong>
+                    {{ service_request[4] }}
+                </p>
+
+            {% endif %}
+
+
+            {% if service_request[5] %}
+
+                <p>
+                    <strong>ZIP Code:</strong>
+                    {{ service_request[5] }}
+                </p>
+
+            {% endif %}
+
+
+            <div class="request-description">
+
+                <h2>Problem Description</h2>
+
+                <p>
+                    {{ service_request[6] }}
+                </p>
+
+            </div>
+
+
+            {% if service_request[7] %}
+
+                <p>
+                    <strong>Preferred Date:</strong>
+                    {{ service_request[7] }}
+                </p>
+
+            {% endif %}
+
+
+            {% if service_request[8] %}
+
+                <p>
+                    <strong>Preferred Time:</strong>
+                    {{ service_request[8] }}
+                </p>
+
+            {% endif %}
+
+
+            <p>
+                <strong>Submitted:</strong>
+                {{ service_request[9] }}
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

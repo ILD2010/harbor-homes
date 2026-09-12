@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbor Homes | Staff Portal</title>
+
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/global.css') }}">
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/staff-login.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pinyon+Script&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <div class="header-content">
+
+            <img src="{{ url_for('static', filename='assets/harbor_homes_logo.png') }}" alt="harbor homes logo">
+
+            <h1>Harbor Homes</h1>
+
+            <p>Where service meets sincerity</p>
+
+            <nav>
+
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+
+                {% if session.get("user_id") %}
+
+                    <a href="{{ url_for('dashboard') }}">
+                        Dashboard
+                    </a>
+
+                {% else %}
+
+                    <a href="{{ url_for('login') }}">
+                        Login
+                    </a>
+
+                {% endif %}
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main  id="staff-login">
+
+        <section id="staff-login-hero">
+
+            <div class="hero-content">
+
+                <h2>
+                    Staff Portal
+                </h2>
+
+                <p>
+                    Welcome back Harbor employees!
+                </p>
+
+            </div>
+
+        </section>
+
+        <section id="staff-login-form">
+
+            <div class="login-form-content">
+
+                <h2>Sign In</h2>
+
+                <form
+                    id="form-login"
+                    method="post">
+
+                    {% if login_error %}
+
+                        <p class="login-error">
+                            {{ login_error }}
+                        </p>
+
+                    {% endif %}
+
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                    Login
+                    </button>
+
+                </form>
+
+                <h3>
+                    Harbor Staff Portal is only for those currently employed through 
+                    Harbor Homes. If you are a customer looking to request service, use 
+                    the button below.
+                </h3>
+
+                <a href="{{ url_for('services') }}" class="staff-login-btn">Services</a>
+                <a href="{{ url_for('contact') }}" class="staff-login-btn">Contact</a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <img src="{{ url_for('static', filename='assets/harbor_main_logo.png') }}" alt="harbor homes logo">
+            <h2>Harbor Homes</h2>
+            <p>Where service meets sincerity</p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>company</h3>
+            
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('staff_login') }}">Staff Portal</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Product</h3>
+
+            <a href="{{ url_for('services') }}">Services</a>
+        
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Resources</h3>
+
+            <a href="{{ url_for('faq') }}">FAQ</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Legal</h3>
+
+            <a href="{{ url_for('privacy') }}">privacy</a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                 © 2026 Harbor Homes. All Rights Reserved
+            </p>
+
+        </div>
+
+    </footer>
+</body>
+</html>

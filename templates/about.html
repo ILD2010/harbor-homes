@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbor Homes | About Us</title>
+
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/global.css') }}">
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/about.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pinyon+Script&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <img src="{{ url_for('static', filename='assets/harbor_homes_logo.png') }}" alt="harbor homes logo">
+
+        <h1>Harbor Homes</h1>
+
+        <p>Where service meets sincerity</p>
+
+        <nav>
+
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('services') }}">Services</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+
+            {% if session.get("user_id") %}
+
+                <a href="{{ url_for('dashboard') }}">
+                    Dashboard
+                </a>
+
+            {% else %}
+
+                <a href="{{ url_for('login') }}">
+                    Login
+                </a>
+
+            {% endif %}
+
+        </nav>
+    </div>
+
+</header>
+
+<section id="hero">
+
+    <div class="hero-content">
+
+        <h2>Built on Service. Growing Through Trust.</h2>
+
+        <p>
+            Harbor Home Services is a family-owned home-service 
+            company providing plumbing, electrical, HVAC, and 
+            home-maintenance services to local homeowners since 2008.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="our-story">
+
+    <div class="our-story-content">
+
+        <h2>
+            It Started With One Truck
+        </h2>
+
+        <p>
+            Daniel Mercer spent several years working in residential 
+            electrical and home repair. In 2008, he started Harbor
+             with a single service truck.
+        </p>
+
+        <p>
+            His idea was that homeowners shouldn't have to maintain 
+            relationships with several different companies just to 
+            take care of one home.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="our-growth">
+
+    <div class="our-growth-content">
+
+        <h2>
+            Growing With the Communities We Serve
+        </h2>
+
+        <p>
+            What began in 2008 as one service truck and a commitment 
+            to dependable workmanship gradually grew into something 
+            larger. As Harbor earned the trust of local homeowners, 
+            our customers began looking to us for help beyond the services
+             we originally provided.
+        </p>
+
+        <p>
+            Rather than becoming a collection of disconnected contractors, 
+            we built a team around a simple idea: homeowners should have 
+            one company they can rely on for many of the systems that keep 
+            their homes running. Over the years, Harbor expanded its 
+            capabilities across electrical, plumbing, heating and cooling, 
+            and general home maintenance.
+        </p>
+
+        <p>
+            Today, Harbor Home Services has grown into a multi-trade team of 
+            34 people while remaining privately owned and operated by the Mercer
+             family. Our company may look different than it did with that first 
+             service truck, but the goal behind it remains the same—provide 
+             dependable service, communicate clearly, and build relationships 
+             that last beyond a single repair.
+        </p>
+
+        <div class="timeline-section">
+
+            <h3>2008 — Harbor Begins</h3>
+            <p>
+                Daniel Mercer establishes Harbor with one service truck and a 
+                focus on residential electrical and home repair.
+            </p>
+
+        </div>
+
+        <div class="timeline-section">
+
+            <h3>Growing With Our Customers</h3>
+            <p>
+                As customer needs expand, Harbor begins building dedicated 
+                capabilities across additional residential trades.
+            </p>
+
+        </div>
+
+        <div class="timeline-section">
+
+            <h3>Expanding Our Services</h3>
+            <p>
+                Plumbing, HVAC, and broader home-maintenance services become 
+                part of Harbor's growing service offering.
+            </p>
+
+        </div>
+
+        <div class="timeline-section">
+
+            <h3>Today — One Multi-Trade Team</h3>
+            <p>
+                Harbor has grown to 34 team members providing several essential 
+                home services through one family-owned company.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="family&leadership">
+
+    <div class="family&leadership-content">
+
+        <h2>
+            Still Family-Owned. Still Close to Home.
+        </h2>
+           
+        <div class="horizontal-container">
+
+            <h3>Daniel Mercer | Founder & President</h3>
+
+            <p>
+                Daniel founded Harbor in 2008 after working in 
+                residential electrical and home repair. He continues 
+                to lead the company and its long-term direction.
+            </p>
+
+        </div>
+
+        <div class="horizontal-container">
+
+            <h3>Rebecca Mercer — Finance & Customer Operations</h3>
+
+            <p>
+                Rebecca oversees financial and customer operations, 
+                helping coordinate the systems that support both 
+                Harbor's customers and service teams.
+            </p>
+
+        </div>
+
+        <div class="horizontal-container">
+
+            <h3>Ethan Mercer — Operations Manager</h3>
+
+            <p>
+                Ethan represents Harbor's second generation, working
+                 in company operations and helping prepare the 
+                 business for its next stage of growth.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="harbor-today">
+
+    <div class="harbor-today-content">
+
+        <h2>Harbor Today</h2>
+
+        <p>
+            Eighteen years after our first service call, Harbor has grown 
+            into a team of technicians, field supervisors, customer-service 
+            professionals, operations staff, and family leadership working 
+            toward the same goal: making home service easier to navigate.
+        </p>
+
+        <p>
+            Our 34-person team supports homeowners across four core service 
+            categories while maintaining the personal approach that shaped 
+            Harbor from the beginning. By bringing multiple trades together 
+            under one company, we can provide customers with a familiar place 
+            to turn as the needs of their homes change over time.
+        </p>
+
+        <div class="info-card">
+            
+            <h2>18+</h2>
+            <h3> Years of Service</h3>
+            <p>Serving local homeowners since 2008.</p>
+
+        </div>
+        
+        <div class="info-card">
+
+            <h2>34</h2>
+            <h3> Team Members</h3>
+            <p>Field professionals and support staff working together across Harbor.</p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h2>21</h2>
+            <h3>Field Technicians</h3>
+            <p>Skilled professionals serving customers directly in their homes.</p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h2>4</h2>
+            <h3>Core Service Areas</h3>
+            <p>Plumbing, electrical, HVAC, and general home maintenance.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="our-values">
+
+    <div class="our-values-content">
+
+        <h2>The Values Behind Our Work</h2>
+
+        <div class="values-section">
+
+            <h3>Intro</h3>
+            <p>
+                Homes change. Technology changes. Companies grow. The principles 
+                behind good service shouldn't. These values guide how Harbor 
+                approaches our customers, our work, and the communities we serve.
+            </p>
+
+        </div>
+
+        <div class="values-section">
+
+            <h3>Reliability</h3>
+            <p>
+                When a customer asks Harbor for help, we understand that they're 
+                trusting us with something important—their home. We believe that 
+                trust should be met with dependable communication, responsible 
+                service, and work our customers can feel confident relying on.
+            </p>
+
+        </div>
+
+        <div class="values-section">
+
+            <h3>Clear Communication</h3>
+            <p>
+                Home repairs can already be stressful without leaving homeowners 
+                wondering what is happening. We believe customers deserve clear 
+                explanations of the problem, the work being recommended, and what 
+                they can expect next.
+            </p>
+
+        </div>
+
+        <div class="values-section">
+
+            <h3>Respect for Your Home</h3>
+            <p>
+                We're guests in the homes we service. Our team is expected to 
+                approach every property with care, professionalism, and respect
+                 for the people who live there.
+            </p>
+
+        </div>
+
+        <div class="values-section">
+
+            <h3>Relationships Over Transactions</h3>
+            <p>
+                Harbor wasn't built around completing one repair and disappearing. 
+                We want to become a company homeowners recognize, trust, and feel 
+                comfortable returning to as their homes and families change.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="final-cta">
+
+    <div class="final-cta-content">
+
+        <h2>Let Our Family Help Take Care of Your Home.</h2>
+
+        <p>
+            For more than 18 years, Harbor has grown by helping homeowners take 
+            care of the places that matter most to them. Whether you're planning 
+            routine maintenance, looking for a trusted professional, or dealing 
+            with an unexpected repair, our team is ready to help you determine 
+            the right next step.
+        </p>
+
+        <a href="{{ url_for('contact') }}" class="contact-btn">Contact</a>
+        <a href="{{ url_for('services') }}" class="services-btn">Services</a>
+
+        <h3>Family-owned and serving our local communities since 2008.</h3>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-brand">
+
+        <img src="{{ url_for('static', filename='harbor_main_logo.png') }}" alt="harbor homes logo">
+        <h2>Harbor Homes</h2>
+        <p>Where service meets sincerity</p>
+
+    </div>
+
+    <div class="footer-column">
+
+        <h3>company</h3>
+
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('staff_login') }}">Staff Portal</a>
+
+    </div>
+
+    <div class="footer-column">
+
+        <h3>Product</h3>
+
+        <a href="{{ url_for('services') }}">Services</a>
+    
+    </div>
+
+    <div class="footer-column">
+
+        <h3>Resources</h3>
+
+        <a href="{{ url_for('faq') }}">FAQ</a>
+
+    </div>
+
+    <div class="footer-column">
+
+        <h3>Legal</h3>
+
+        <a href="{{ url_for ('privacy') }}">privacy</a>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+             © 2026 Harbor Homes. All Rights Reserved
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>

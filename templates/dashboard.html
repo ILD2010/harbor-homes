@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbor Homes | Dashboard</title>
+
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pinyon+Script&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <section id="dashboard-welcome">
+
+        <p>Harbor Customer Portal</p>
+        <h1>Welcome Back, {{ user_name }}.</h1>
+
+    </section>
+
+
+    <section id="account-summary">
+
+        <h2>Your Account</h2>
+
+        <p>
+            <strong>Email:</strong>
+            {{ user_email }}
+        </p>
+
+        <p>
+            <strong>Phone Number:</strong>
+            {{ user_phone or "Not Provided" }}
+        </p>
+        
+    </section>
+
+
+    <section id="recent-requests">
+
+    <h2>Recent Service Requests</h2>
+
+    {% if service_requests %}
+
+        {% for service_request in service_requests %}
+
+            <div class="service-request">
+
+                <h3>
+                    Request #{{ service_request[0] }}
+                </h3>
+
+                <p>
+                    <strong>Service:</strong>
+                    {{ service_request[1] }}
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    {{ service_request[2] }}
+                </p>
+
+                <p>
+                    <strong>Urgency:</strong>
+                    {{ service_request[3] }}
+                </p>
+
+                {% if service_request[4] %}
+                    <p>
+                        <strong>Preferred Date:</strong>
+                        {{ service_request[4] }}
+                    </p>
+                {% endif %}
+
+                {% if service_request[5] %}
+                    <p>
+                        <strong>Preferred Time:</strong>
+                        {{ service_request[5] }}
+                    </p>
+                {% endif %}
+
+                <p>
+                    <strong>Submitted:</strong>
+                    {{ service_request[6] }}
+                </p>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>
+            You don't have any recent service requests.
+        </p>
+
+    {% endif %}
+
+    <a href="{{ url_for('my_requests') }}">
+        My Requests
+    </a>
+
+    <a href="{{ url_for('contact') }}">
+        Request Service
+    </a>
+
+</section>
+
+
+    <section id="account-actions">
+
+        <h2>Account</h2>
+
+        <a href="{{ url_for('account_settings') }}">Account Settings</a>
+
+        <a href="{{ url_for('logout') }}">Logout</a>
+
+    </section>
+
+    
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

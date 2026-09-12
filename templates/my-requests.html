@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Harbor Homes | My Requests</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/my-requests.css') }}"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <header id="requests-header">
+
+        <div>
+            <p>Harbor Customer Portal</p>
+            <h1>My Service Requests</h1>
+        </div>
+
+        <a href="{{ url_for('dashboard') }}">
+            Back to Dashboard
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <section id="requests-list">
+
+            {% if service_requests %}
+
+                {% for service_request in service_requests %}
+
+                    <article class="service-request">
+
+                        <h2>
+                            Request #{{ service_request[0] }}
+                        </h2>
+
+                        <p>
+                            <strong>Service:</strong>
+                            {{ service_request[1] }}
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            {{ service_request[2] }}
+                        </p>
+
+                        <p>
+                            <strong>Urgency:</strong>
+                            {{ service_request[3] }}
+                        </p>
+
+
+                        {% if service_request[4] %}
+
+                            <p>
+                                <strong>Preferred Date:</strong>
+                                {{ service_request[4] }}
+                            </p>
+
+                        {% endif %}
+
+
+                        {% if service_request[5] %}
+
+                            <p>
+                                <strong>Preferred Time:</strong>
+                                {{ service_request[5] }}
+                            </p>
+
+                        {% endif %}
+
+
+                        <p>
+                            <strong>Submitted:</strong>
+                            {{ service_request[6] }}
+                        </p>
+
+                        <a
+                            class="view_request"
+                            href="{{ url_for('request_details', request_id=service_request[0]) }}">
+                                View Request
+                        </a>
+
+                    </article>
+
+                {% endfor %}
+
+
+            {% else %}
+
+                <div class="no-requests">
+
+                    <h2>No service requests yet</h2>
+
+                    <p>
+                        You haven't submitted any service requests.
+                    </p>
+
+                    <a href="{{ url_for('contact') }}">
+                        Request Service
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <section id="request-actions">
+
+            <a href="{{ url_for('contact') }}">
+                New Service Request
+            </a>
+
+            <a href="{{ url_for('dashboard') }}">
+                Back to Dashboard
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

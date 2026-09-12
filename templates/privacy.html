@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbor Homes | Privacy Policy</title>
+
+    <link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/global.css') }}">
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/privacy.css') }}"> 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pinyon+Script&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <img src="{{ url_for('static', filename='assets/harbor_homes_logo.png') }}" alt="harbor homes logo">
+
+            <h1>Harbor Homes</h1>
+
+            <p>Where service meets sincerity</p>
+
+            <nav>
+
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+
+                {% if session.get("user_id") %}
+
+                    <a href="{{ url_for('dashboard') }}">
+                        Dashboard
+                    </a>
+
+                {% else %}
+
+                    <a href="{{ url_for('login') }}">
+                        Login
+                    </a>
+
+                {% endif %}
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <section id="privacy-hero">
+
+        <div class="privacy-hero-content">
+
+            <h2>Privacy Policy</h2>
+
+            <ul>
+
+                <li><a href="#info-we-collect" class="privacy-links">What information can Harbor have about me?</a></li>
+                <li><a href="#how-we-use-info" class="privacy-links">How We Use Your Information</a></li>
+                <li><a href="#service-requests" class="privacy-links">Service Requests</a></li>
+                <li><a href="#customer-accounts" class="privacy-links">Customer Accounts</a></li>
+                <li><a href="#cookies-web-info" class="privacy-links">Cookies and Website Usage</a></li>
+                <li><a href="#sharing-info" class="privacy-links">How Information May Be Shared</a></li>
+                <li><a href="#data-security" class="privacy-links">How We Protect Information</a></li>
+                <li><a href="#data-retention" class="privacy-links">How Long We Keep Information</a></li>
+                <li><a href="#consumer-rights" class="privacy-links">Your Privacy Choices</a></li>
+                <li><a href="#childrens-privacy" class="privacy-links">Children's Privacy</a></li>
+                <li><a href="#third-party-services" class="privacy-links">Third-Party Services</a></li>
+                <li><a href="#privacy-changes" class="privacy-links">Changes to the Privacy Policy</a></li>
+                <li><a href="#privacy-contact" class="privacy-links">Questions About Your Privacy?</a></li>
+
+            </ul>
+
+        </div>
+    </section>
+
+    <section id="info-we-collect">
+
+        <div class="info-we-collect-content">
+
+            <h2>Information You Provide</h2>
+
+            <p>
+                We may collect information that you voluntarily provide when requesting service, contacting Harbor,
+                 creating an account, or using features of the customer portal.
+            </p>
+
+            <h3>This may include:</h3>
+
+            <ul>
+
+                <li>Name</li>
+                <li>Email address</li>
+                <li>Phone number</li>
+                <li>Service address or ZIP code</li>
+                <li>Preferred contact method</li>
+                <li>Requested service category</li>
+                <li>Scheduling preferences</li>
+                <li>Information describing a home-service problem</li>
+                <li>Account login information</li>
+                <li>Service-request and service-history information</li>
+
+            </ul>
+
+            <p>
+                Customers should not submit passwords, financial account information, Social Security numbers, or 
+                other unnecessary sensitive information through service-description or general contact fields.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="how-we-use-info">
+
+        <div class="how-we-use-info-content">
+
+            <h2>How We Use Your Information</h2>
+
+            <P>
+                Harbor uses information collected through our website and services to provide and improve our 
+                home-service operations and customer experience.
+            </P>
+
+            <h3>Information may be used to:</h3>
+
+            <ul>
+
+                <li>Respond to service requests</li>
+                <li>Contact customers about requested services</li>
+                <li>Schedule and coordinate appointments</li>
+                <li>Determine the appropriate service team</li>
+                <li>Maintain customer accounts</li>
+                <li>Provide access to service history</li>
+                <li>Respond to questions or support requests</li>
+                <li>Maintain the security of our website and customer portal</li>
+                <li>Diagnose technical problems</li>
+                <li>Improve our website and services</li>
+                <li>Meet applicable business or legal obligations</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <section id="service-requests">
+
+        <div class="service-requests-content">
+
+            <h2>Service Requests</h2>
+
+            <p>
+                When you submit a service request, Harbor may collect the contact, property, scheduling, and service 
+                information necessary to review and respond to your request.
+            </p>
+            <p>
+                Information submitted through a service request may be made available to Harbor 
+                personnel who need it to coordinate, schedule, or perform the requested service.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="customer-accounts">
+
+        <div class="customer-accounts-content">
+
+            <h2>Customer Accounts</h2>
+
+            <P>
+                Customers who create a Harbor account may provide information used to establish and maintain their 
+                account. Account information may be associated with service requests, service history, contact
+                information, and other customer-portal features.
+            </P>
+            <p>
+                Customers are responsible for maintaining the confidentiality of their account credentials and should
+                use a unique password that is not shared with other services.
+            </p>
+
+            <p><b>Harbor employees will not ask customers to provide their account password.</b></p>
+
+        </div>
+
+    </section>
+
+    <section id="cookies-web-info">
+
+        <div class="cookies-content">
+
+            <h2>Cookies and Website Usage</h2>
+
+            <p>
+                Like many websites, Harbor may use cookies or similar technologies to support website functionality, 
+                maintain user sessions, remember certain preferences, and understand how the website is being used.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="sharing-info">
+
+        <div class="sharing-info-content">
+
+            <h2>How Information May Be Shared</h2>
+
+            <p>
+                Harbor does not sell customer personal information.
+            </p>
+            <p>
+                Information may be shared when reasonably necessary to operate our services, fulfill customer requests, 
+                maintain our technology, comply with applicable legal requirements, or protect the security and 
+                integrity of our services.
+            </p>
+
+        </div>
+    </section>
+
+    <section id="data-security">
+
+        <div class="data-security-content">
+
+            <h2>How We Protect Information</h2>
+
+            <p>
+                Harbor takes reasonable administrative and technical measures designed to protect personal information
+                 against unauthorized access, alteration, disclosure, or loss.
+            </p>
+
+            <ul>
+
+                <li>Encrypted HTTPS connections</li>
+                <li>Secure password hashing</li>
+                <li>Authentication controls</li>
+                <li>Authorization/access controls</li>
+                <li>Server-side input validation</li>
+                <li>Database access restrictions</li>
+                <li>Secure session management</li>
+                <li>Rate limiting</li>
+                <li>Logging and monitoring</li>
+                <li>Dependency/security updates</li>
+
+            </ul>
+        </div>
+    </section>
+
+    <section id="data-retention">
+
+        <div class="data-retention-content">
+
+            <h2>How Long We Keep Information</h2>
+
+            <p>
+                Harbor may retain personal information for as long as reasonably necessary to provide services, maintain
+                 customer and service records, operate customer accounts, meet legitimate business needs, resolve disputes,
+                  maintain security, and satisfy applicable legal requirements.
+            </p>
+
+            <p>
+                Retention periods may vary depending on the type of information and the reason it was collected.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="consumer-rights">
+
+        <div class="consumer-rights-content">
+
+            <h2>Your Privacy Choices</h2>
+
+            <p>
+                Depending on where you live and applicable law, you may have certain rights or choices regarding your personal information.
+            </p>
+
+            <h3>Those could include requests to:</h3>
+
+            <ul>
+
+                <li>Access certain personal information</li>
+                <li>Correct inaccurate information</li>
+                <li>Update account information</li>
+                <li>Request deletion of certain information</li>
+                <li>Ask questions about how information is used</li>
+                <li>Manage certain communication preferences</li>
+
+            </ul>
+
+            <p>
+                Some information may need to be retained where required or permitted for legitimate business, security, recordkeeping, or legal purposes.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="childrens-privacy">
+
+        <div class="childrens-privacy-content">
+
+            <h2>Children's Privacy</h2>
+
+            <p>
+                Harbor's website and customer services are intended for individuals seeking residential home services and are not designed 
+                for children. Harbor does not knowingly collect personal information from children through customer-account or service-request
+                 features where prohibited by applicable law.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="third-party-services">
+
+        <div class="third-party-content">
+
+            <h2>Third-Party Services</h2>
+
+            <p>
+                Harbor's website may contain links to or integrate with third-party websites and services. Those services may maintain 
+                their own privacy practices, and Harbor's Privacy Policy does not govern information collected independently by third parties.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="privacy-changes">
+
+        <div class="privacy-changes-content">
+
+            <h2>Changes to the Privacy Policy</h2>
+
+            <p>
+                Harbor may update this Privacy Policy as our website, services, technology, or legal obligations change. When updates
+                 are made, the revised policy will be posted on this page with an updated effective date.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="privacy-contact">
+
+        <div class="privacy-contact-content">
+
+            <h2>Questions About Your Privacy?</h2>
+
+            <p>
+                If you have questions about this Privacy Policy or Harbor's handling of personal information, contact us through the information below.
+            </p>
+
+            <h3>Harbor Homes Buisnuss Address: </h3>
+
+            <h3>Harbor Homes Email: </h3>
+
+            <h3>Buisnuss phone: </h3>
+
+            <a href="{{ url_for('contact') }}" class="contact-btn">Contact Harbor</a>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <img src="{{ url_for('static', filename='assets/harbor_homes_logo.png') }}" alt="harbor homes logo">
+            <h2>Harbor Homes</h2>
+            <p>Where service meets sincerity</p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>company</h3>
+            
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('staff_login') }}">Staff Portal</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Product</h3>
+
+            <a href="{{ url_for('services') }}">Services</a>
+        
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Resources</h3>
+
+            <a href="{{ url_for('faq') }}">FAQ</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Legal</h3>
+
+            <a href="{{ url_for('privacy') }}">privacy</a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                 © 2026 Harbor Homes. All Rights Reserved
+            </p>
+
+        </div>
+
+    </footer>
+</body>
+</html>

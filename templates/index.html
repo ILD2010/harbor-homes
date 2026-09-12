@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbor Homes | Plumbing, Electrical, HVAC & Home Services</title>
+    <!-- Link external CSS stylesheet here -->
+    
+    <link 
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/global.css') }}"
+    >
+    <link 
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/index.css') }}"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pinyon+Script&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <img 
+            src="{{ url_for('static', filename='assets/harbor_homes_logo.png') }}" 
+            alt="harbor homes logo"
+            >
+
+        <h1>Harbor Homes</h1>
+
+        <p>Where service meets sincerity</p>
+
+        <nav>
+
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('services') }}">Services</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+
+            {% if session.get("user_id") %}
+
+                <a href="{{ url_for('dashboard') }}">
+                    Dashboard
+                </a>
+
+            {% else %}
+
+                <a href="{{ url_for('login') }}">
+                    Login
+                </a>
+
+            {% endif %}
+
+        </nav>
+    </div>
+
+</header>
+
+    <section id="hero">
+
+        <div class="hero-content">
+
+            <h2>
+                Home Services You Can Depend On.
+            </h2>
+
+            <p>
+                From unexpected repairs to routine maintenance, Harbor Home Services provides 
+                trusted plumbing, electrical, HVAC, and home-maintenance services for homeowners 
+                throughout our local communities. One team. Multiple trades. One place to turn 
+                when your home needs attention.
+            </p>
+
+            <a href="{{ url_for('about') }}" class="learn-more-btn">Learn More</a>
+
+        </div>
+
+    </section>
+
+
+    <section id="business-overview">
+
+        <div class="business-overview-content">
+
+            <h2>
+                One Team For The Home You Depend On
+            </h2>
+
+            <p>
+                Taking care of a home often means relying on several different professionals. 
+                Harbor Home Services was founded in 2008 with a simpler idea: give homeowners 
+                one dependable company they can turn to for the services their homes need.
+            </p>
+
+            <p>
+                Today, our team brings together professionals across plumbing, electrical, HVAC,
+                 and general home maintenance. Whether you're dealing with an unexpected problem
+                  or planning ahead with routine maintenance, our goal is to make getting reliable 
+                  home service straightforward from the first request to the completed job.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="services-preview">
+
+        <div class="services-preview-content">
+
+            <h2>
+                How Can We Help?
+            </h2>
+
+            <p>
+                From everyday maintenance to unexpected repairs, Harbor provides a range of 
+                residential services through one trusted team.
+            </p>
+
+            <div class="services-grid">
+
+                <div class="services-card" data-card="plumbing">
+
+                    <h3>Plumbing</h3>
+
+                    <p>
+                        From leaking fixtures and clogged drains to plumbing repairs and 
+                        installations, our plumbing team helps keep water where it belongs.
+                    </p>
+
+                    <a href="{{ url_for('services') }}#plumbing" class="plumbing-btn">Learn More</a>
+
+                </div>
+
+                <div class="services-card" data-card="electrical">
+
+                    <h3>Electrical</h3>
+
+                    <p>
+                        Troubleshooting, repairs, installations, and residential electrical
+                         work performed with your home's safety in mind.
+                    </p>
+
+                    <a href="{{ url_for('services') }}#electrical" class="electrical-btn">Learn More</a>
+
+                </div>
+
+                <div class="services-card" data-card="hvac">
+
+                    <h3>Heating & Cooling</h3>
+
+                    <p>
+                        Keep your home comfortable throughout the year with HVAC maintenance,
+                         diagnostics, repairs, and installation services.
+                    </p>
+
+                    <a href="{{ url_for('services') }}#hvac" class="hvac-btn">Learn More</a>
+
+                </div>
+
+                <div class="services-card" data-card="home-maintenance">
+
+                    <h3>Home Maintenance</h3>
+
+                    <p>
+                        Take care of the smaller repairs and maintenance projects that keep 
+                        your home functioning properly and prevent little problems from becoming 
+                        bigger ones.
+                    </p>
+
+                    <a href="{{ url_for('services') }}#home-maintenance" class="home-maintenance-btn">Learn More</a>
+                        
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="why-harbor">
+
+        <div class="why-harbor-content">
+
+            <h2>
+                Why Homeowners Choose Harbor
+            </h2>
+
+            <div class="why-grid">
+
+                <div class="years-of-service-card" data-card="years-of-service">
+
+                    <h3>18 Years Of Local Service</h3>
+
+                    <p>
+                        Serving homeowners and families since 2008.
+                    </p>
+
+                </div>
+
+                <div class="family-owned-card" data-card="family-owned">
+
+                    <h3>Family-Owned & Operated</h3>
+
+                    <p>
+                        Built as a local family business with long-term relationships at the 
+                        center of how we work.
+                    </p>
+
+                </div>
+
+                <div class="trades-card" data-card="multiple-trades">
+
+                    <h3>Multiple Trades. One Team.</h3>
+
+                    <p>
+                        Plumbing, electrical, HVAC, and home maintenance without having to search 
+                        for a different company every time something goes wrong.
+                    </p>
+
+                </div>
+
+                <div class="informed-service-card" data-card="informed">
+
+                    <h3>Service That Keeps You Informed</h3>
+
+                    <p>
+                        From the initial request through completion, we believe homeowners 
+                        should understand what's happening in their home and what comes next.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="how-harbor-works">
+
+        <div class="how-harbor-works-content">
+
+            <h2>Getting Help Shouldn't Be Complicated</h2>
+
+            <p>
+                We've designed our service process to make it easy to tell us what's happening, 
+                understand what comes next, and keep track of the work performed on your home.
+            </p>
+
+
+        </div>
+    </section>
+
+    <section id="emergency-service">
+
+        <div class="emergency-service-content">
+
+            <h2>Some Problems Can't Wait.</h2>
+
+            <p>
+                A major leak, electrical problem, or loss of heating and cooling can quickly 
+                disrupt your home. Harbor offers assistance for qualifying urgent home-service 
+                situations and helps customers determine the appropriate next step.
+            </p>
+
+            <h3>View Emergency Services</h3>
+
+            <a href="{{ url_for('services') }}#emergency-service" class="emergency-services-btn">Learn More</a>
+
+        </div>
+
+    </section>
+
+    <section id="customer-portal">
+
+        <div class="customer-portal-content">
+
+            <h2>
+                Your Home's Service History, In One Place
+            </h2>
+
+            <p>
+                Home maintenance doesn't end when a technician leaves. Your Harbor account gives
+                 you a central place to keep track of your relationship with our service team.
+            </p>
+
+            <div class="customer-portal-content-list">
+
+                <h3>View Service History</h3>
+                <p>Keep a record of previous Harbor service visits.</p>
+
+                <h3>Track Requests</h3>
+                <p>See the current status of active service requests.</p>
+
+                <h3>Request New Service</h3>
+                <p>Start another service request directly from your account.</p>
+
+                <h3>Manage Your Account</h3>
+                <p>Keep your contact and account information organized.</p>
+
+                <a href="{{ url_for('register') }}" class="register-now-btn">Register</a>
+            
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="customer-testimonial">
+
+        <div class="customer-testimonial">
+
+            <h2>Built Around the People We Serve</h2>
+
+            <p>
+                Good home service is about more than completing a repair. It's about communication, 
+                reliability, and leaving customers confident in the work performed.
+            </p>
+
+            <div class="testimonial-grid">
+
+                  <div class="testimonial-card">
+
+                        <p class="testimonial-rating">★★★★★</p>
+
+                        <blockquote>
+                            “The Harbor team explained the problem clearly and made
+                            the entire repair process easy to understand.”
+                        </blockquote>
+
+                        <p class="testimonial-author">
+                             — Demo Customer
+                        </p>
+
+                    </div>
+
+
+                    <div class="testimonial-card">
+
+                        <p class="testimonial-rating">★★★★★</p>
+
+                        <blockquote>
+                            “The Harbor team explained the problem clearly and made
+                            the entire repair process easy to understand.”
+                        </blockquote>
+
+                        <p class="testimonial-author">
+                            — Demo Customer
+                        </p>
+
+                    </div>
+
+
+                    <div class="testimonial-card">
+
+                        <p class="testimonial-rating">★★★★★</p>
+
+                        <blockquote>
+                            “The Harbor team explained the problem clearly and made
+                            the entire repair process easy to understand.”
+                        </blockquote>
+
+                        <p class="testimonial-author">
+                            — Demo Customer
+                        </p>
+
+                    </div>
+                
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="faq">
+
+        <div class="faq-content">
+
+            <h2>
+                Questions Before Scheduling?
+            </h2>
+
+            <p>
+                We want you to understand what to expect before requesting service. Here are 
+                answers to a few common questions.
+            </p>
+
+            <div class="faq-content-questions">
+
+                <h3>
+                    Do You Provide Estimates?
+                </h3>
+
+                <p>
+                    Estimates depend on the type of service requested and the information available 
+                    before an on-site evaluation. Harbor will communicate the applicable process 
+                    before work is approved.
+                </p>
+
+                <h3>
+                    What services does Harbor provide?
+                </h3>
+
+                <p>
+                    Harbor provides residential plumbing, electrical, HVAC, general home-maintenance, 
+                    and qualifying urgent-service assistance.
+                </p>
+
+                <h3>
+                    Do I need an account to request service?
+                </h3>
+
+                <p>
+                    No. Customers can contact Harbor and submit an initial service request without creating 
+                    an account. An account provides additional tools for managing service history and future
+                     requests.
+                </p>
+
+            </div>
+
+            <h2>
+                See Our FAQ Page For More Questions
+            </h2>
+
+            <a href="{{ url_for('faq') }}" class="faq-btn">FAQ</a>
+
+
+        </div>
+
+    </section>
+
+    <section id="final-cta">
+
+        <div class="final-cta-content">
+
+            <h2>
+                Your Home Needs Attention. Let's Get Started.
+            </h2>
+
+            <p>
+                Tell us what you need help with and take the first step toward getting your home back to the way it should be.
+            </p>
+
+            <h3>
+                Request service
+            </h3>
+            <a href="{{ url_for('contact') }}" class="request-service-btn">Request Service</a>
+
+            <h3>
+                Learn More About Services We Offer
+            </h3>
+            <a href="{{ url_for('services') }}" class="services-btn">Services</a>
+
+        </div>
+
+    </section>
+
+    <footer>   
+
+        <div class="footer-brand">
+
+            <img
+                src="{{ url_for('static', filename='assets/harbor_main_logo.png') }}"
+                alt="harbor homes logo"
+                >
+
+            <h2>Harbor Homes</h2>
+            <p>Where service meets sincerity</p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>company</h3>
+
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('staff_login') }}">Staff Portal</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Product</h3>
+
+            <a href="{{ url_for('services') }}">Services</a>
+        
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Resources</h3>
+
+            <a href="{{ url_for('faq') }}">FAQ</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Legal</h3>
+
+            <a href="{{ url_for('privacy') }}">privacy</a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                 © 2026 Harbor Homes. All Rights Reserved
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
