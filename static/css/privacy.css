@@ -1,0 +1,224 @@
+/* =========================================================
+   Harbor Homes — Privacy Policy
+   Clean document layout. Header and footer stay in global.css.
+   ========================================================= */
+
+/* ---------- Privacy hero and page index ---------- */
+
+#privacy-hero {
+  padding: clamp(4.5rem, 8vw, 7rem) 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--cream-50);
+}
+
+.privacy-hero-content {
+  width: min(100%, 960px);
+  margin-inline: auto;
+}
+
+.privacy-hero-content h2 {
+  margin: 0 0 2.25rem;
+  color: var(--navy-900);
+  font: 650 clamp(2.75rem, 6vw, 5rem)/1.02 "Space Grotesk", sans-serif;
+  letter-spacing: -0.055em;
+}
+
+.privacy-hero-content ul {
+  display: grid;
+  margin: 0;
+  padding: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  list-style: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.privacy-hero-content li {
+  min-width: 0;
+}
+
+.privacy-links {
+  display: block;
+  height: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  color: var(--navy-900);
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.privacy-links:hover {
+  background: var(--blue-100);
+  color: var(--blue-700);
+}
+
+/* ---------- Policy document sections ---------- */
+
+body > section:not(#privacy-hero) {
+  padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+  scroll-margin-top: 110px;
+  background: var(--white);
+}
+
+body > section:not(#privacy-hero):nth-of-type(even) {
+  background: var(--cream-50);
+}
+
+body > section:not(#privacy-hero) > div {
+  width: min(100%, 860px);
+  margin-inline: auto;
+}
+
+body > section:not(#privacy-hero) h2 {
+  margin: 0 0 1.35rem;
+  color: var(--navy-900);
+  font: 650 clamp(1.75rem, 3.5vw, 2.55rem)/1.15 "Space Grotesk", sans-serif;
+  letter-spacing: -0.035em;
+}
+
+body > section:not(#privacy-hero) h3 {
+  margin: 1.75rem 0 0.75rem;
+  color: var(--navy-900);
+  font: 650 clamp(1rem, 2vw, 1.2rem)/1.4 "Space Grotesk", sans-serif;
+}
+
+body > section:not(#privacy-hero) p {
+  max-width: 75ch;
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+body > section:not(#privacy-hero) p:last-child {
+  margin-bottom: 0;
+}
+
+body > section:not(#privacy-hero) ul {
+  display: grid;
+  margin: 1rem 0 1.5rem;
+  padding: 1.25rem 1.25rem 1.25rem 2.7rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem 2rem;
+  border-left: 3px solid var(--blue-600);
+  background: rgba(220, 236, 239, 0.42);
+  color: var(--text);
+}
+
+body > section:not(#privacy-hero) li {
+  padding-left: 0.2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+body > section:not(#privacy-hero) b,
+body > section:not(#privacy-hero) strong {
+  color: var(--navy-900);
+  font-weight: 750;
+}
+
+/* ---------- Closing contact section ---------- */
+
+#privacy-contact {
+  border-top: 1px solid var(--line);
+  background: var(--blue-100);
+}
+
+.privacy-contact-content {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid rgba(52, 127, 145, 0.2);
+  border-radius: var(--radius-md);
+  background: var(--white);
+}
+
+.privacy-contact-content h3 {
+  margin-block: 0.65rem;
+  color: var(--text);
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.contact-btn {
+  display: inline-flex;
+  min-height: 48px;
+  margin-top: 1.25rem;
+  padding: 0.8rem 1.3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--navy-900);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 750;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  background: var(--blue-700);
+}
+
+/* ---------- Tablet and mobile ---------- */
+
+@media (max-width: 700px) {
+  #privacy-hero,
+  body > section:not(#privacy-hero) {
+    padding-inline: 1.15rem;
+  }
+
+  .privacy-hero-content ul {
+    grid-template-columns: 1fr;
+  }
+
+  body > section:not(#privacy-hero) ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-hero-content h2 {
+    font-size: clamp(2.5rem, 14vw, 3.75rem);
+  }
+
+  .privacy-hero-content ul {
+    padding: 0.8rem;
+  }
+
+  .privacy-links {
+    padding: 0.75rem 0.8rem;
+  }
+
+  body > section:not(#privacy-hero) {
+    padding-block: 2.8rem;
+    scroll-margin-top: 145px;
+  }
+
+  body > section:not(#privacy-hero) ul {
+    padding: 1.1rem 1rem 1.1rem 2.2rem;
+  }
+
+  .privacy-contact-content {
+    padding: 1.35rem;
+  }
+
+  .contact-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .privacy-links,
+  .contact-btn {
+    transition: none;
+  }
+}

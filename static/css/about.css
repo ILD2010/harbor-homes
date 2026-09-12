@@ -1,0 +1,542 @@
+/* =========================================================
+   Harbor Homes — About Page
+   Page-specific presentation only.
+   Header and footer are styled in global.css.
+   ========================================================= */
+
+/* ---------- Shared page structure ---------- */
+
+#hero,
+#our-story,
+#our-growth,
+section[id="family&leadership"],
+#harbor-today,
+#our-values,
+#final-cta {
+  position: relative;
+  padding: var(--section-space) 1.5rem;
+  overflow: hidden;
+}
+
+.hero-content,
+.our-story-content,
+.our-growth-content,
+section[id="family&leadership"] > div,
+.harbor-today-content,
+.our-values-content,
+.final-cta-content {
+  width: min(100%, var(--page-width));
+  margin-inline: auto;
+}
+
+#our-story h2,
+#our-growth h2,
+section[id="family&leadership"] h2,
+#harbor-today > .harbor-today-content > h2,
+#our-values > .our-values-content > h2,
+#final-cta h2 {
+  max-width: 820px;
+  margin: 0 0 1.2rem;
+  color: var(--navy-900);
+  font: 650 clamp(2.1rem, 4.3vw, 3.75rem)/1.08 "Space Grotesk", sans-serif;
+  letter-spacing: -0.045em;
+}
+
+#our-story p,
+#our-growth > .our-growth-content > p,
+#harbor-today > .harbor-today-content > p,
+#final-cta > .final-cta-content > p {
+  max-width: 740px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  line-height: 1.82;
+}
+
+/* ---------- About hero ---------- */
+
+#hero {
+  display: grid;
+  min-height: clamp(500px, 68vh, 700px);
+  padding-top: clamp(6rem, 10vw, 9rem);
+  padding-bottom: clamp(6rem, 10vw, 9rem);
+  place-items: center;
+  background:
+    radial-gradient(circle at 88% 8%, transparent 0 200px, rgba(255, 255, 255, 0.07) 201px 202px, transparent 203px),
+    radial-gradient(circle at 75% 112%, transparent 0 235px, rgba(255, 255, 255, 0.055) 236px 237px, transparent 238px),
+    linear-gradient(105deg, var(--navy-950), var(--navy-900) 58%, var(--blue-700));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h2 {
+  max-width: 900px;
+  margin: 0;
+  color: var(--white);
+  font: 630 clamp(3rem, 7vw, 6.1rem)/0.98 "Space Grotesk", sans-serif;
+  letter-spacing: -0.06em;
+}
+
+.hero-content p {
+  max-width: 680px;
+  margin: 1.8rem 0 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
+  line-height: 1.8;
+}
+
+/* ---------- Our story ---------- */
+
+#our-story {
+  background: var(--cream-50);
+}
+
+.our-story-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1.25rem clamp(3rem, 8vw, 7rem);
+  align-items: start;
+}
+
+.our-story-content h2 {
+  grid-row: 1 / span 2;
+}
+
+.our-story-content p {
+  grid-column: 2;
+}
+
+/* ---------- Our growth and timeline ---------- */
+
+#our-growth {
+  background: var(--white);
+}
+
+.our-growth-content > h2,
+.our-growth-content > p {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.our-growth-content > p + p {
+  margin-top: 1rem;
+}
+
+.timeline-section {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 1.5rem 3.2rem;
+  border-left: 3px solid var(--blue-100);
+  background:
+    radial-gradient(circle at left center, var(--copper-500) 0 7px, var(--white) 8px 12px, transparent 13px);
+}
+
+.our-growth-content > p:last-of-type {
+  margin-bottom: 3.2rem;
+}
+
+.timeline-section h3 {
+  margin: 0 0 0.55rem;
+  color: var(--navy-900);
+  font: 660 clamp(1.15rem, 2vw, 1.4rem)/1.3 "Space Grotesk", sans-serif;
+}
+
+.timeline-section p {
+  max-width: 650px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.72;
+}
+
+.timeline-section:hover {
+  background-color: var(--cream-50);
+}
+
+/* ---------- Family and leadership ---------- */
+
+section[id="family&leadership"] {
+  background: var(--blue-100);
+}
+
+section[id="family&leadership"] h2 {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.horizontal-container {
+  display: grid;
+  max-width: 1020px;
+  min-height: 160px;
+  margin: 1.15rem auto 0;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  border: 1px solid rgba(52, 127, 145, 0.18);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.horizontal-container:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.horizontal-container h3 {
+  margin: 0;
+  color: var(--navy-900);
+  font: 660 clamp(1.15rem, 2vw, 1.4rem)/1.35 "Space Grotesk", sans-serif;
+}
+
+.horizontal-container p {
+  margin: 0;
+  padding-left: clamp(1.5rem, 4vw, 3rem);
+  border-left: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+/* ---------- Harbor today statistic pills ---------- */
+
+#harbor-today {
+  background: var(--navy-900);
+}
+
+#harbor-today > .harbor-today-content > h2,
+#harbor-today > .harbor-today-content > p {
+  margin-inline: auto;
+  color: var(--white);
+  text-align: center;
+}
+
+#harbor-today > .harbor-today-content > p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#harbor-today > .harbor-today-content > p + p {
+  margin-top: 1rem;
+}
+
+.harbor-today-content {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.harbor-today-content > h2,
+.harbor-today-content > p {
+  grid-column: 1 / -1;
+}
+
+.harbor-today-content > p:last-of-type {
+  margin-bottom: 2.4rem;
+}
+
+.info-card {
+  display: flex;
+  min-height: 290px;
+  padding: 2rem 1.25rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  text-align: center;
+  transition: transform 200ms ease, background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.info-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.info-card h2 {
+  margin: 0;
+  color: var(--white);
+  font: 700 clamp(3.4rem, 6vw, 5.4rem)/0.9 "Space Grotesk", sans-serif;
+  letter-spacing: -0.06em;
+}
+
+.info-card h3 {
+  margin: 1rem 0 0.55rem;
+  color: var(--copper-500);
+  font: 700 0.78rem/1.35 "Manrope", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.info-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+/* ---------- Company values ---------- */
+
+#our-values {
+  background: var(--cream-50);
+}
+
+.our-values-content {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+#our-values > .our-values-content > h2 {
+  grid-column: 1 / -1;
+  margin-inline: auto;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.values-section {
+  min-height: 315px;
+  padding: clamp(1.5rem, 2.8vw, 2rem);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--blue-600);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.values-section:first-of-type {
+  display: grid;
+  min-height: auto;
+  padding: clamp(1.8rem, 4vw, 3rem);
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(180px, 0.35fr) minmax(0, 1.65fr);
+  align-items: center;
+  gap: 2rem;
+  border-top-color: var(--copper-500);
+  background: var(--navy-900);
+}
+
+.values-section:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.values-section h3 {
+  margin: 0 0 1rem;
+  color: var(--navy-900);
+  font: 660 clamp(1.2rem, 2vw, 1.5rem)/1.3 "Space Grotesk", sans-serif;
+}
+
+.values-section p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.75;
+}
+
+.values-section:first-of-type h3 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.values-section:first-of-type p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ---------- Final call to action ---------- */
+
+#final-cta {
+  background: linear-gradient(135deg, var(--blue-700), var(--navy-900) 75%);
+}
+
+.final-cta-content {
+  text-align: center;
+}
+
+#final-cta h2,
+#final-cta > .final-cta-content > p {
+  margin-inline: auto;
+  color: var(--white);
+}
+
+#final-cta > .final-cta-content > p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-btn,
+.services-btn {
+  display: inline-flex;
+  min-width: 150px;
+  min-height: 50px;
+  margin: 2rem 0.4rem 0;
+  padding: 0.85rem 1.35rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 750;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 180ms ease, background-color 180ms ease,
+    border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.contact-btn {
+  background: var(--copper-500);
+  color: var(--white);
+}
+
+.services-btn {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: var(--white);
+}
+
+.contact-btn:hover,
+.services-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+.contact-btn:hover {
+  background: #dc8950;
+}
+
+.services-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#final-cta h3 {
+  margin: 2.2rem auto 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+/* ---------- Large tablet ---------- */
+
+@media (max-width: 1000px) {
+  .harbor-today-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .info-card {
+    min-height: 230px;
+    border-radius: 120px;
+  }
+
+  .our-values-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .values-section:first-of-type,
+  #our-values > .our-values-content > h2 {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Tablet and mobile ---------- */
+
+@media (max-width: 760px) {
+  #hero,
+  #our-story,
+  #our-growth,
+  section[id="family&leadership"],
+  #harbor-today,
+  #our-values,
+  #final-cta {
+    padding-inline: 1.15rem;
+  }
+
+  #hero {
+    min-height: 540px;
+  }
+
+  .our-story-content {
+    grid-template-columns: 1fr;
+  }
+
+  .our-story-content h2,
+  .our-story-content p {
+    grid-row: auto;
+    grid-column: 1;
+  }
+
+  .horizontal-container {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .horizontal-container p {
+    padding: 1rem 0 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .values-section:first-of-type {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+}
+
+/* ---------- Small mobile ---------- */
+
+@media (max-width: 560px) {
+  .hero-content h2 {
+    font-size: clamp(2.7rem, 14vw, 4.2rem);
+  }
+
+  .timeline-section {
+    padding-right: 0.4rem;
+    padding-left: 2.3rem;
+  }
+
+  .harbor-today-content,
+  .our-values-content {
+    grid-template-columns: 1fr;
+  }
+
+  .harbor-today-content > h2,
+  .harbor-today-content > p,
+  #our-values > .our-values-content > h2,
+  .values-section:first-of-type {
+    grid-column: 1;
+  }
+
+  .info-card {
+    min-height: 210px;
+    padding-inline: 2.5rem;
+  }
+
+  .values-section {
+    min-height: auto;
+  }
+
+  .contact-btn,
+  .services-btn {
+    min-width: 132px;
+    margin-inline: 0.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-section,
+  .horizontal-container,
+  .info-card,
+  .values-section,
+  .contact-btn,
+  .services-btn {
+    transition: none;
+  }
+}

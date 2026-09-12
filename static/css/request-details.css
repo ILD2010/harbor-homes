@@ -1,0 +1,247 @@
+/* =========================================================
+   Harbor Homes — Individual Request Details
+   Focused portal layout with responsive detail cards.
+   ========================================================= */
+
+:root {
+  --navy-950: #082433;
+  --navy-900: #0d2c3e;
+  --blue-700: #28677a;
+  --blue-600: #347f91;
+  --blue-100: #e7f2f4;
+  --cream-50: #f7f4ed;
+  --white: #ffffff;
+  --text: #17313d;
+  --muted: #60747d;
+  --line: rgba(13, 44, 62, 0.14);
+  --page-width: 1180px;
+  --radius: 18px;
+  --shadow: 0 14px 34px rgba(8, 36, 51, 0.09);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 94% 0%, rgba(52, 127, 145, 0.11), transparent 27rem),
+    var(--cream-50);
+  color: var(--text);
+  font-family: "Manrope", sans-serif;
+  line-height: 1.55;
+}
+
+h1,
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Request header ---------- */
+
+#request-header {
+  width: min(calc(100% - 3rem), var(--page-width));
+  margin: clamp(1rem, 3vw, 2.5rem) auto 1rem;
+  padding: clamp(1.4rem, 3vw, 2.25rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--navy-950), var(--navy-900) 62%, var(--blue-700));
+  box-shadow: 0 20px 48px rgba(8, 36, 51, 0.15);
+}
+
+#request-header p {
+  margin: 0 0 0.35rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+#request-header h1 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(1.85rem, 4vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+#request-header > a {
+  min-height: 48px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.3rem;
+  color: var(--navy-900);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 170ms ease, background-color 170ms ease,
+    box-shadow 170ms ease;
+}
+
+#request-header > a:hover {
+  transform: translateY(-2px);
+  background: var(--blue-100);
+  box-shadow: 0 9px 20px rgba(8, 36, 51, 0.16);
+}
+
+#request-header > a:focus-visible {
+  outline: 3px solid var(--blue-600);
+  outline-offset: 3px;
+}
+
+/* ---------- Request information ---------- */
+
+main {
+  width: min(calc(100% - 3rem), var(--page-width));
+  margin: 0 auto clamp(1.5rem, 4vw, 3rem);
+}
+
+#request-details {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--blue-600);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+#request-details > h2 {
+  margin: 0 0 0.35rem;
+  padding-bottom: 1rem;
+  grid-column: 1 / -1;
+  color: var(--navy-900);
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+#request-details > p {
+  min-width: 0;
+  min-height: 82px;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #fbfcfc;
+  overflow-wrap: anywhere;
+}
+
+#request-details > p strong {
+  margin-bottom: 0.15rem;
+  color: var(--navy-900);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+/* The description spans the full panel for easier reading. */
+
+.request-description {
+  margin: 0.15rem 0;
+  padding: clamp(1.1rem, 2.5vw, 1.6rem);
+  grid-column: 1 / -1;
+  border: 1px solid rgba(52, 127, 145, 0.25);
+  border-radius: 15px;
+  background: var(--blue-100);
+}
+
+.request-description h2 {
+  margin: 0 0 0.65rem;
+  color: var(--navy-900);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.2;
+}
+
+.request-description p {
+  max-width: 82ch;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.75;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Tablet and mobile ---------- */
+
+@media (max-width: 820px) {
+  #request-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  #request-header,
+  main {
+    width: min(calc(100% - 1.5rem), var(--page-width));
+  }
+
+  #request-header {
+    margin-top: 0.75rem;
+    padding: 1.35rem;
+    align-items: stretch;
+    flex-direction: column;
+    border-radius: var(--radius);
+  }
+
+  #request-header > a {
+    width: 100%;
+  }
+
+  #request-details {
+    padding: 1rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+
+  #request-details > h2,
+  .request-description {
+    grid-column: 1;
+  }
+
+  #request-details > p {
+    min-height: auto;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .request-description {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #request-header > a {
+    transition: none;
+  }
+}

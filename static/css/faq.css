@@ -1,0 +1,481 @@
+/* =========================================================
+   Harbor Homes — FAQ Page
+   Horizontal information-log layout.
+   Header and footer remain in global.css.
+   ========================================================= */
+
+/* ---------- Page structure ---------- */
+
+#faq-hero,
+#faq-scheduling,
+#faq-services,
+#faq-estimate,
+#faq-emergency,
+#faq-accounts,
+#faq-communication,
+#final-cta {
+  position: relative;
+  padding: var(--section-space) 1.5rem;
+}
+
+.faq-hero-content,
+.faq-scheduling-content,
+.faq-services-content,
+.faq-estimate-content,
+.faq-emergency-content,
+.faq-accounts-content,
+.faq-communication-content,
+.final-cta-content {
+  width: min(100%, var(--page-width));
+  margin-inline: auto;
+}
+
+/* ---------- Buttons ---------- */
+
+.contact-btn,
+.request-service-btn,
+.services-btn {
+  display: inline-flex;
+  min-width: 150px;
+  min-height: 50px;
+  padding: 0.85rem 1.35rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: 750 0.92rem/1 "Manrope", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 180ms ease, background-color 180ms ease,
+    border-color 180ms ease, box-shadow 180ms ease;
+}
+
+/* ---------- Hero ---------- */
+
+#faq-hero {
+  display: grid;
+  min-height: clamp(520px, 70vh, 720px);
+  padding-top: clamp(6rem, 10vw, 9rem);
+  padding-bottom: clamp(6rem, 10vw, 9rem);
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 8%, transparent 0 200px, rgba(255, 255, 255, 0.07) 201px 202px, transparent 203px),
+    radial-gradient(circle at 75% 112%, transparent 0 235px, rgba(255, 255, 255, 0.055) 236px 237px, transparent 238px),
+    linear-gradient(105deg, var(--navy-950), var(--navy-900) 58%, var(--blue-700));
+}
+
+.faq-hero-content h2 {
+  max-width: 900px;
+  margin: 0;
+  color: var(--white);
+  font: 630 clamp(3rem, 7vw, 6.1rem)/0.98 "Space Grotesk", sans-serif;
+  letter-spacing: -0.06em;
+}
+
+.faq-hero-content p {
+  max-width: 710px;
+  margin: 1.8rem 0 1.5rem;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
+  line-height: 1.8;
+}
+
+.faq-hero-content h3 {
+  max-width: 670px;
+  margin: 0 0 1rem;
+  color: var(--copper-500);
+  font-size: 0.92rem;
+  font-weight: 750;
+  line-height: 1.6;
+}
+
+.faq-hero-content .contact-btn {
+  background: var(--copper-500);
+  color: var(--white);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+.faq-hero-content .contact-btn:hover {
+  transform: translateY(-3px);
+  background: #dc8950;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.26);
+}
+
+/* ---------- FAQ section backgrounds ---------- */
+
+#faq-scheduling,
+#faq-estimate,
+#faq-accounts {
+  background: var(--cream-50);
+}
+
+#faq-services,
+#faq-communication {
+  background: var(--white);
+}
+
+#faq-emergency {
+  background: var(--navy-950);
+}
+
+/* ---------- Horizontal question-and-answer logs ---------- */
+
+.faq-scheduling-content,
+.faq-services-content,
+.faq-estimate-content,
+.faq-emergency-content,
+.faq-accounts-content,
+.faq-communication-content {
+  display: grid;
+  max-width: 1040px;
+  grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
+  gap: 0;
+  align-items: stretch;
+}
+
+.faq-scheduling-content > h2,
+.faq-services-content > h2,
+.faq-estimate-content > h2,
+.faq-emergency-content > h2,
+.faq-accounts-content > h2,
+.faq-communication-content > h2 {
+  position: static;
+  display: block;
+  width: auto;
+  max-width: 830px;
+  min-height: 0;
+  margin: 0 0 2.8rem;
+  padding: 0;
+  grid-column: 1 / -1;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--navy-900);
+  font: 650 clamp(2.1rem, 4.3vw, 3.75rem)/1.08 "Space Grotesk", sans-serif;
+  letter-spacing: -0.045em;
+  opacity: 1;
+  transform: none;
+}
+
+.faq-scheduling-content > h3,
+.faq-services-content > h3,
+.faq-estimate-content > h3,
+.faq-emergency-content > h3,
+.faq-accounts-content > h3,
+.faq-communication-content > h3 {
+  display: flex;
+  min-width: 0;
+  min-height: 150px;
+  margin: 1rem 0 0;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  grid-column: 1;
+  align-items: center;
+  overflow: visible;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--blue-600);
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  background: var(--blue-100);
+  color: var(--navy-900);
+  font: 660 clamp(1.05rem, 1.8vw, 1.28rem)/1.45 "Space Grotesk", sans-serif;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-scheduling-content > h3:first-of-type,
+.faq-services-content > h3:first-of-type,
+.faq-estimate-content > h3:first-of-type,
+.faq-emergency-content > h3:first-of-type,
+.faq-accounts-content > h3:first-of-type,
+.faq-communication-content > h3:first-of-type {
+  margin-top: 0;
+}
+
+.faq-scheduling-content > h3 + p,
+.faq-services-content > h3 + p,
+.faq-estimate-content > h3 + p,
+.faq-emergency-content > h3 + p,
+.faq-accounts-content > h3 + p,
+.faq-communication-content > h3 + p {
+  display: flex;
+  min-width: 0;
+  min-height: 150px;
+  margin: 1rem 0 0;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  grid-column: 2;
+  align-items: center;
+  overflow: visible;
+  border: 1px solid var(--line);
+  border-left: 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--white);
+  color: var(--muted);
+  font-size: 0.97rem;
+  line-height: 1.78;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-scheduling-content > h3:first-of-type + p,
+.faq-services-content > h3:first-of-type + p,
+.faq-estimate-content > h3:first-of-type + p,
+.faq-emergency-content > h3:first-of-type + p,
+.faq-accounts-content > h3:first-of-type + p,
+.faq-communication-content > h3:first-of-type + p {
+  margin-top: 0;
+}
+
+/* ---------- Emergency variation ---------- */
+
+.faq-emergency-content > h2 {
+  color: var(--white);
+}
+
+.faq-emergency-content > h3 {
+  border-color: rgba(255, 255, 255, 0.16);
+  border-left-color: var(--copper-500);
+  background: rgba(206, 124, 70, 0.13);
+  color: var(--white);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+}
+
+.faq-emergency-content > h3 + p {
+  border-color: rgba(255, 255, 255, 0.16);
+  border-left: 0;
+  background: rgba(255, 255, 255, 0.075);
+  color: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* ---------- Final call to action ---------- */
+
+#final-cta {
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--blue-700), var(--navy-900) 75%);
+}
+
+.final-cta-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem 1.1rem;
+  text-align: center;
+}
+
+#final-cta > .final-cta-content > h2,
+#final-cta > .final-cta-content > p {
+  grid-column: 1 / -1;
+  margin-inline: auto;
+  color: var(--white);
+}
+
+#final-cta > .final-cta-content > h2 {
+  max-width: 830px;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font: 650 clamp(2.1rem, 4.3vw, 3.75rem)/1.08 "Space Grotesk", sans-serif;
+  letter-spacing: -0.045em;
+}
+
+#final-cta > .final-cta-content > p {
+  max-width: 730px;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  line-height: 1.8;
+}
+
+#final-cta h3 {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+#final-cta h3:nth-of-type(1) { grid-row: 3; grid-column: 1; }
+#final-cta h3:nth-of-type(2) { grid-row: 3; grid-column: 2; }
+#final-cta h3:nth-of-type(3) { grid-row: 3; grid-column: 3; }
+
+#final-cta .contact-btn {
+  grid-row: 4;
+  grid-column: 1;
+  background: var(--copper-500);
+  color: var(--white);
+}
+
+#final-cta .request-service-btn {
+  grid-row: 4;
+  grid-column: 2;
+  background: var(--white);
+  color: var(--navy-900);
+}
+
+#final-cta .services-btn {
+  grid-row: 4;
+  grid-column: 3;
+  border-color: rgba(255, 255, 255, 0.48);
+  background: transparent;
+  color: var(--white);
+}
+
+#final-cta .contact-btn,
+#final-cta .request-service-btn,
+#final-cta .services-btn {
+  width: min(100%, 230px);
+  justify-self: center;
+}
+
+#final-cta .contact-btn:hover,
+#final-cta .request-service-btn:hover,
+#final-cta .services-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+#final-cta .contact-btn:hover { background: #dc8950; }
+#final-cta .request-service-btn:hover { background: var(--blue-100); }
+#final-cta .services-btn:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* ---------- Tablet and mobile ---------- */
+
+@media (max-width: 760px) {
+  #faq-hero,
+  #faq-scheduling,
+  #faq-services,
+  #faq-estimate,
+  #faq-emergency,
+  #faq-accounts,
+  #faq-communication,
+  #final-cta {
+    padding-inline: 1.15rem;
+  }
+
+  #faq-hero {
+    min-height: 560px;
+  }
+
+  .faq-scheduling-content,
+  .faq-services-content,
+  .faq-estimate-content,
+  .faq-emergency-content,
+  .faq-accounts-content,
+  .faq-communication-content {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-scheduling-content > h2,
+  .faq-services-content > h2,
+  .faq-estimate-content > h2,
+  .faq-emergency-content > h2,
+  .faq-accounts-content > h2,
+  .faq-communication-content > h2,
+  .faq-scheduling-content > h3,
+  .faq-services-content > h3,
+  .faq-estimate-content > h3,
+  .faq-emergency-content > h3,
+  .faq-accounts-content > h3,
+  .faq-communication-content > h3,
+  .faq-scheduling-content > h3 + p,
+  .faq-services-content > h3 + p,
+  .faq-estimate-content > h3 + p,
+  .faq-emergency-content > h3 + p,
+  .faq-accounts-content > h3 + p,
+  .faq-communication-content > h3 + p {
+    grid-column: 1;
+  }
+
+  .faq-scheduling-content > h3,
+  .faq-services-content > h3,
+  .faq-estimate-content > h3,
+  .faq-emergency-content > h3,
+  .faq-accounts-content > h3,
+  .faq-communication-content > h3 {
+    min-height: 0;
+    margin-top: 1rem;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .faq-scheduling-content > h3:first-of-type,
+  .faq-services-content > h3:first-of-type,
+  .faq-estimate-content > h3:first-of-type,
+  .faq-emergency-content > h3:first-of-type,
+  .faq-accounts-content > h3:first-of-type,
+  .faq-communication-content > h3:first-of-type {
+    margin-top: 0;
+  }
+
+  .faq-scheduling-content > h3 + p,
+  .faq-services-content > h3 + p,
+  .faq-estimate-content > h3 + p,
+  .faq-emergency-content > h3 + p,
+  .faq-accounts-content > h3 + p,
+  .faq-communication-content > h3 + p {
+    min-height: 0;
+    margin-top: 0;
+    border: 1px solid var(--line);
+    border-top: 0;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+  }
+
+  .faq-emergency-content > h3 + p {
+    border-color: rgba(255, 255, 255, 0.16);
+    border-top: 0;
+  }
+
+  .final-cta-content {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  #final-cta > .final-cta-content > h2,
+  #final-cta > .final-cta-content > p,
+  #final-cta h3,
+  #final-cta .contact-btn,
+  #final-cta .request-service-btn,
+  #final-cta .services-btn {
+    grid-column: 1;
+  }
+
+  #final-cta h3:nth-of-type(1) { grid-row: 3; }
+  #final-cta .contact-btn { grid-row: 4; }
+  #final-cta h3:nth-of-type(2) { grid-row: 5; margin-top: 1rem; }
+  #final-cta .request-service-btn { grid-row: 6; }
+  #final-cta h3:nth-of-type(3) { grid-row: 7; margin-top: 1rem; }
+  #final-cta .services-btn { grid-row: 8; }
+}
+
+@media (max-width: 520px) {
+  .faq-hero-content h2 {
+    font-size: clamp(2.7rem, 14vw, 4.2rem);
+  }
+
+  .faq-scheduling-content > h3,
+  .faq-services-content > h3,
+  .faq-estimate-content > h3,
+  .faq-emergency-content > h3,
+  .faq-accounts-content > h3,
+  .faq-communication-content > h3,
+  .faq-scheduling-content > h3 + p,
+  .faq-services-content > h3 + p,
+  .faq-estimate-content > h3 + p,
+  .faq-emergency-content > h3 + p,
+  .faq-accounts-content > h3 + p,
+  .faq-communication-content > h3 + p {
+    padding: 1.25rem 1.15rem;
+  }
+
+  #final-cta .contact-btn,
+  #final-cta .request-service-btn,
+  #final-cta .services-btn {
+    width: 100%;
+    max-width: 290px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-btn,
+  .request-service-btn,
+  .services-btn {
+    transition: none;
+  }
+}

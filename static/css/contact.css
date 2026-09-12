@@ -1,0 +1,668 @@
+/* =========================================================
+   Harbor Homes — Contact Page
+   Page-specific presentation only.
+   Header and footer remain in global.css.
+   ========================================================= */
+
+/* ---------- Shared page structure ---------- */
+
+#contact-hero,
+#contact-options,
+#service-form,
+#privacy-assurance,
+#next-steps,
+#emergency-notice,
+#faq-help,
+#final-reassurance {
+  position: relative;
+  padding: var(--section-space) 1.5rem;
+  overflow: hidden;
+}
+
+.contact-hero-content,
+.contact-options-content,
+.service-form-content,
+.privacy-assurance-content,
+.next-steps-content,
+.emergency-notice-content,
+.faq-help-content,
+.final-reassurance-btn {
+  width: min(100%, var(--page-width));
+  margin-inline: auto;
+}
+
+#contact-options > .contact-options-content > h2,
+#service-form h2,
+#privacy-assurance h2,
+#next-steps h2,
+#emergency-notice h2,
+#faq-help h2,
+#final-reassurance h2 {
+  max-width: 830px;
+  margin: 0 0 1.2rem;
+  color: var(--navy-900);
+  font: 650 clamp(2.1rem, 4.3vw, 3.75rem)/1.08 "Space Grotesk", sans-serif;
+  letter-spacing: -0.045em;
+}
+
+#service-form > div > p,
+#privacy-assurance > div > p,
+#emergency-notice > div > p,
+#faq-help > div > p,
+#final-reassurance > div > p {
+  max-width: 750px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  line-height: 1.82;
+}
+
+/* ---------- Contact hero ---------- */
+
+#contact-hero {
+  display: grid;
+  min-height: clamp(500px, 68vh, 700px);
+  padding-top: clamp(6rem, 10vw, 9rem);
+  padding-bottom: clamp(6rem, 10vw, 9rem);
+  place-items: center;
+  background:
+    radial-gradient(circle at 88% 8%, transparent 0 200px, rgba(255, 255, 255, 0.07) 201px 202px, transparent 203px),
+    radial-gradient(circle at 75% 112%, transparent 0 235px, rgba(255, 255, 255, 0.055) 236px 237px, transparent 238px),
+    linear-gradient(105deg, var(--navy-950), var(--navy-900) 58%, var(--blue-700));
+}
+
+.contact-hero-content h2 {
+  max-width: 900px;
+  margin: 0;
+  color: var(--white);
+  font: 630 clamp(3rem, 7vw, 6.1rem)/0.98 "Space Grotesk", sans-serif;
+  letter-spacing: -0.06em;
+}
+
+.contact-hero-content p {
+  max-width: 700px;
+  margin: 1.8rem 0 1.5rem;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
+  line-height: 1.8;
+}
+
+.contact-hero-content h3 {
+  margin: 0;
+  color: var(--copper-500);
+  font-size: 0.9rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Contact options ---------- */
+
+#contact-options {
+  background: var(--cream-50);
+}
+
+.contact-options-content {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.contact-options-content > h2 {
+  grid-column: 1 / -1;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contact-cards {
+  min-width: 0;
+  min-height: 230px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--blue-600);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 200ms ease, box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+
+.contact-cards:hover {
+  transform: translateY(-6px);
+  border-color: rgba(52, 127, 145, 0.34);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-cards h2,
+.contact-cards h3 {
+  margin: 0 0 0.8rem;
+  color: var(--navy-900);
+  font: 660 clamp(1.15rem, 1.8vw, 1.4rem)/1.3 "Space Grotesk", sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.contact-cards p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.72;
+}
+
+/* ---------- Service request form ---------- */
+
+#service-form {
+  background: var(--white);
+}
+
+.service-form-content > h2,
+.service-form-content > p {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.service-form-content > p {
+  margin-bottom: 3rem;
+}
+
+.service-form-content form {
+  display: grid;
+  max-width: 920px;
+  margin-inline: auto;
+  padding: clamp(1.6rem, 5vw, 4rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--cream-50);
+  box-shadow: var(--shadow-md);
+}
+
+.service-form-content form h3 {
+  margin: 0 0 1rem;
+  padding-bottom: 0.8rem;
+  grid-column: 1 / -1;
+  border-bottom: 1px solid var(--line);
+  color: var(--navy-900);
+  font: 660 clamp(1.2rem, 2vw, 1.5rem)/1.3 "Space Grotesk", sans-serif;
+}
+
+.service-form-content form h3:nth-of-type(1) { grid-row: 1; }
+.service-form-content form h3:nth-of-type(2) { grid-row: 6; margin-top: 1.4rem; }
+.service-form-content form h3:nth-of-type(3) { grid-row: 13; margin-top: 1.4rem; }
+
+.service-form-content label {
+  align-self: end;
+  color: var(--navy-900);
+  font-size: 0.84rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.service-form-content input,
+.service-form-content select,
+.service-form-content textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(13, 44, 62, 0.2);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--text);
+  font: 500 0.95rem/1.4 "Manrope", sans-serif;
+  transition: border-color 180ms ease, box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.service-form-content textarea {
+  min-height: 165px;
+  resize: vertical;
+}
+
+.service-form-content input::placeholder,
+.service-form-content textarea::placeholder {
+  color: #8a979d;
+  opacity: 1;
+}
+
+.service-form-content input:hover,
+.service-form-content select:hover,
+.service-form-content textarea:hover {
+  border-color: rgba(52, 127, 145, 0.48);
+}
+
+.service-form-content input:focus,
+.service-form-content select:focus,
+.service-form-content textarea:focus {
+  outline: none;
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 4px rgba(52, 127, 145, 0.14);
+  background: var(--white);
+}
+
+/* Explicit placement keeps labels visually above fields with the current HTML. */
+
+label[for="full-name"] { grid-row: 2; grid-column: 1; }
+input[name="full-name"] { grid-row: 3; grid-column: 1; }
+
+label[for="email"] { grid-row: 2; grid-column: 2; }
+input[name="email"] { grid-row: 3; grid-column: 2; }
+
+label[for="phone-number"] { grid-row: 4; grid-column: 1; }
+input[name="phone-number"] { grid-row: 5; grid-column: 1; }
+
+label[for="Preffered-contact"] { grid-row: 4; grid-column: 2; }
+#prefered-contact { grid-row: 5; grid-column: 2; }
+
+label[for="service-type"] { grid-row: 7; grid-column: 1; }
+#service-type { grid-row: 8; grid-column: 1; }
+
+label[for="urgency"] { grid-row: 7; grid-column: 2; }
+#urgency { grid-row: 8; grid-column: 2; }
+
+label[for="address"] { grid-row: 9; grid-column: 1; }
+input[name="address"] { grid-row: 10; grid-column: 1; }
+
+label[for="zip-code"] { grid-row: 9; grid-column: 2; }
+input[for="zip-code"] { grid-row: 10; grid-column: 2; }
+
+label[for="problem-description"] {
+  grid-row: 11;
+  grid-column: 1 / -1;
+}
+
+textarea[name="problem-description"] {
+  grid-row: 12;
+  grid-column: 1 / -1;
+}
+
+label[for="prefered-date"] { grid-row: 14; grid-column: 1; }
+input[name="preffered-date"] { grid-row: 15; grid-column: 1; }
+
+label[for="preffered-time"] { grid-row: 14; grid-column: 2; }
+input[name="preffered-time"] { grid-row: 15; grid-column: 2; }
+
+#send-btn {
+  min-height: 52px;
+  margin-top: 1.4rem;
+  padding: 0.9rem 1.5rem;
+  grid-row: 16;
+  grid-column: 1 / -1;
+  justify-self: start;
+  border: 0;
+  border-radius: 999px;
+  background: var(--navy-900);
+  color: var(--white);
+  font-size: 0.94rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+#send-btn:hover {
+  transform: translateY(-2px);
+  background: var(--blue-700);
+  box-shadow: 0 12px 24px rgba(13, 44, 62, 0.2);
+}
+
+/* ---------- Privacy assurance ---------- */
+
+#privacy-assurance {
+  background: var(--blue-100);
+}
+
+.privacy-assurance-content {
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid rgba(52, 127, 145, 0.2);
+  border-left: 6px solid var(--blue-600);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.privacy-assurance-content h4 {
+  max-width: 760px;
+  margin: 1.5rem 0 0;
+  color: var(--blue-700);
+  font-size: 0.88rem;
+  font-weight: 750;
+  line-height: 1.65;
+}
+
+/* ---------- Next steps ---------- */
+
+#next-steps {
+  background: var(--cream-50);
+}
+
+.next-steps-content {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.next-steps-content > h2 {
+  grid-column: 1 / -1;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.submit-steps {
+  min-height: 230px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--copper-500);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.submit-steps h3 {
+  margin: 0 0 0.8rem;
+  color: var(--navy-900);
+  font: 660 clamp(1.05rem, 1.6vw, 1.25rem)/1.4 "Space Grotesk", sans-serif;
+}
+
+.submit-steps p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+/* ---------- Emergency notice ---------- */
+
+#emergency-notice {
+  background: var(--navy-950);
+}
+
+.emergency-notice-content {
+  padding: clamp(2.2rem, 6vw, 4.5rem);
+  border-left: 7px solid var(--copper-500);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+#emergency-notice h2,
+#emergency-notice h3 {
+  color: var(--white);
+}
+
+#emergency-notice > div > p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#emergency-notice h3 {
+  margin: 2rem 0 0.8rem;
+  font: 650 1.08rem/1.35 "Space Grotesk", sans-serif;
+}
+
+.emergency-services-btn,
+.faq-btn,
+.services-btn {
+  display: inline-flex;
+  min-width: 130px;
+  min-height: 50px;
+  padding: 0.85rem 1.35rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 750;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 180ms ease, background-color 180ms ease,
+    border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.emergency-services-btn {
+  background: var(--copper-500);
+  color: var(--white);
+}
+
+.emergency-services-btn:hover {
+  transform: translateY(-2px);
+  background: #dc8950;
+}
+
+#emergency-notice h4 {
+  max-width: 850px;
+  margin: 2rem 0 0;
+  padding: 1.3rem 1.5rem;
+  border: 1px solid rgba(206, 124, 70, 0.42);
+  border-radius: 14px;
+  background: rgba(206, 124, 70, 0.1);
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.87rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+/* ---------- FAQ help ---------- */
+
+#faq-help {
+  background: var(--white);
+}
+
+.faq-help-content {
+  text-align: center;
+}
+
+#faq-help h2,
+#faq-help > div > p {
+  margin-inline: auto;
+}
+
+#faq-help h3 {
+  display: inline-block;
+  margin: 2rem 0.6rem 0 1.5rem;
+  color: var(--navy-900);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.faq-btn,
+.services-btn {
+  margin-top: 2rem;
+  background: var(--navy-900);
+  color: var(--white);
+}
+
+.faq-btn:hover,
+.services-btn:hover {
+  transform: translateY(-2px);
+  background: var(--blue-700);
+}
+
+/* ---------- Final reassurance ---------- */
+
+#final-reassurance {
+  background: linear-gradient(135deg, var(--blue-700), var(--navy-900) 75%);
+}
+
+.final-reassurance-btn {
+  text-align: center;
+}
+
+#final-reassurance h2,
+#final-reassurance > div > p {
+  margin-inline: auto;
+  color: var(--white);
+}
+
+#final-reassurance > div > p {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+/* ---------- Large tablet ---------- */
+
+@media (max-width: 1040px) {
+  .contact-options-content,
+  .next-steps-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-options-content > h2,
+  .next-steps-content > h2 {
+    grid-column: 1 / -1;
+  }
+
+  .contact-cards,
+  .submit-steps {
+    min-height: 200px;
+  }
+}
+
+/* ---------- Tablet and mobile ---------- */
+
+@media (max-width: 720px) {
+  #contact-hero,
+  #contact-options,
+  #service-form,
+  #privacy-assurance,
+  #next-steps,
+  #emergency-notice,
+  #faq-help,
+  #final-reassurance {
+    padding-inline: 1.15rem;
+  }
+
+  #contact-hero {
+    min-height: 540px;
+  }
+
+  .service-form-content form {
+    grid-template-columns: 1fr;
+  }
+
+  .service-form-content form h3,
+  .service-form-content form h3:nth-of-type(1),
+  .service-form-content form h3:nth-of-type(2),
+  .service-form-content form h3:nth-of-type(3),
+  .service-form-content label,
+  .service-form-content input,
+  .service-form-content select,
+  .service-form-content textarea,
+  label[for="full-name"],
+  input[name="full-name"],
+  label[for="email"],
+  input[name="email"],
+  label[for="phone-number"],
+  input[name="phone-number"],
+  label[for="Preffered-contact"],
+  #prefered-contact,
+  label[for="service-type"],
+  #service-type,
+  label[for="urgency"],
+  #urgency,
+  label[for="address"],
+  input[name="address"],
+  label[for="zip-code"],
+  input[for="zip-code"],
+  label[for="problem-description"],
+  textarea[name="problem-description"],
+  label[for="prefered-date"],
+  input[name="preffered-date"],
+  label[for="preffered-time"],
+  input[name="preffered-time"],
+  #send-btn {
+    grid-row: auto;
+    grid-column: 1;
+  }
+
+  .service-form-content form h3:nth-of-type(2),
+  .service-form-content form h3:nth-of-type(3) {
+    margin-top: 1.5rem;
+  }
+
+  .service-form-content label {
+    margin-top: 0.4rem;
+  }
+
+  /* Restore label-before-field order on a single-column mobile form. */
+  label[for="full-name"] { order: 2; }
+  input[name="full-name"] { order: 3; }
+  label[for="email"] { order: 4; }
+  input[name="email"] { order: 5; }
+  label[for="phone-number"] { order: 6; }
+  input[name="phone-number"] { order: 7; }
+  label[for="Preffered-contact"] { order: 8; }
+  #prefered-contact { order: 9; }
+  .service-form-content form h3:nth-of-type(2) { order: 10; }
+  label[for="service-type"] { order: 11; }
+  #service-type { order: 12; }
+  label[for="urgency"] { order: 13; }
+  #urgency { order: 14; }
+  label[for="address"] { order: 15; }
+  input[name="address"] { order: 16; }
+  label[for="zip-code"] { order: 17; }
+  input[for="zip-code"] { order: 18; }
+  label[for="problem-description"] { order: 19; }
+  textarea[name="problem-description"] { order: 20; }
+  .service-form-content form h3:nth-of-type(3) { order: 21; }
+  label[for="prefered-date"] { order: 22; }
+  input[name="preffered-date"] { order: 23; }
+  label[for="preffered-time"] { order: 24; }
+  input[name="preffered-time"] { order: 25; }
+  #send-btn { order: 26; }
+}
+
+/* ---------- Small mobile ---------- */
+
+@media (max-width: 560px) {
+  .contact-hero-content h2 {
+    font-size: clamp(2.7rem, 14vw, 4.2rem);
+  }
+
+  .contact-options-content,
+  .next-steps-content {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-options-content > h2,
+  .next-steps-content > h2 {
+    grid-column: 1;
+  }
+
+  .contact-cards,
+  .submit-steps {
+    min-height: auto;
+  }
+
+  .service-form-content form {
+    padding: 1.4rem;
+  }
+
+  #send-btn {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .privacy-assurance-content,
+  .emergency-notice-content {
+    padding: 2rem 1.4rem;
+  }
+
+  #faq-help h3 {
+    display: block;
+    margin: 1.7rem 0 0.5rem;
+  }
+
+  .faq-btn,
+  .services-btn {
+    margin-top: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-cards,
+  #send-btn,
+  .emergency-services-btn,
+  .faq-btn,
+  .services-btn {
+    transition: none;
+  }
+}

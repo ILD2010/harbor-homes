@@ -1,0 +1,696 @@
+/* =========================================================
+   Harbor Homes — Services Page
+   Page-specific presentation only.
+   Header and footer remain in global.css.
+   ========================================================= */
+
+/* ---------- Shared page structure ---------- */
+
+#services-hero,
+#services-category-overview,
+#plumbing,
+#electrical,
+#hvac,
+#home-maintenance,
+#emergency-service,
+#service-finder,
+#final-cta {
+  position: relative;
+  padding: var(--section-space) 1.5rem;
+  overflow: hidden;
+}
+
+.services-hero-content,
+.services-category-content,
+.plumbing-content,
+.electrical-content,
+.hvac-content,
+.home-maintenance-content,
+.emergency-services-content,
+.service-finder-content,
+.final-cta-content {
+  width: min(100%, var(--page-width));
+  margin-inline: auto;
+}
+
+#services-category-overview > .services-category-content > h2,
+#plumbing h2,
+#electrical h2,
+#hvac h2,
+#home-maintenance h2,
+#emergency-service h2,
+#service-finder h2,
+#final-cta h2 {
+  max-width: 830px;
+  margin: 0 0 1.2rem;
+  color: var(--navy-900);
+  font: 650 clamp(2.1rem, 4.3vw, 3.75rem)/1.08 "Space Grotesk", sans-serif;
+  letter-spacing: -0.045em;
+}
+
+#services-category-overview > div > p,
+#plumbing > div > p,
+#electrical > div > p,
+#hvac > div > p,
+#home-maintenance > div > p,
+#emergency-service > div > p,
+#service-finder > div > p,
+#final-cta > div > p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  line-height: 1.82;
+}
+
+/* ---------- Shared action links ---------- */
+
+.plumbing-btn,
+.electrical-btn,
+.hvac-btn,
+.home-maintenance-btn,
+.contact-btn,
+.request-help-btn {
+  display: inline-flex;
+  min-height: 50px;
+  padding: 0.85rem 1.35rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: 750 0.92rem/1 "Manrope", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 180ms ease, background-color 180ms ease,
+    color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.plumbing-btn,
+.electrical-btn,
+.hvac-btn,
+.home-maintenance-btn,
+.contact-btn {
+  background: var(--navy-900);
+  color: var(--white);
+}
+
+.plumbing-btn:hover,
+.electrical-btn:hover,
+.hvac-btn:hover,
+.home-maintenance-btn:hover,
+.contact-btn:hover {
+  transform: translateY(-2px);
+  background: var(--blue-700);
+  box-shadow: 0 11px 23px rgba(13, 44, 62, 0.2);
+}
+
+/* ---------- Services hero ---------- */
+
+#services-hero {
+  display: grid;
+  min-height: clamp(540px, 72vh, 750px);
+  padding-top: clamp(6rem, 10vw, 9rem);
+  padding-bottom: clamp(6rem, 10vw, 9rem);
+  place-items: center;
+  background:
+    radial-gradient(circle at 88% 7%, transparent 0 200px, rgba(255, 255, 255, 0.07) 201px 202px, transparent 203px),
+    radial-gradient(circle at 77% 112%, transparent 0 245px, rgba(255, 255, 255, 0.055) 246px 247px, transparent 248px),
+    linear-gradient(105deg, var(--navy-950), var(--navy-900) 58%, var(--blue-700));
+}
+
+.services-hero-content h2 {
+  max-width: 950px;
+  margin: 0;
+  color: var(--white);
+  font: 630 clamp(3rem, 7vw, 6.1rem)/0.98 "Space Grotesk", sans-serif;
+  letter-spacing: -0.06em;
+}
+
+.services-hero-content p {
+  max-width: 720px;
+  margin: 1.8rem 0 1.5rem;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
+  line-height: 1.8;
+}
+
+.services-hero-content h3 {
+  margin: 0;
+  color: var(--copper-500);
+  font-size: 0.9rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Service category grid ---------- */
+
+#services-category-overview {
+  background: var(--cream-50);
+}
+
+.services-category-content {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.services-category-content > h2,
+.services-category-content > p {
+  grid-column: 1 / -1;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.services-category-content > p {
+  margin-bottom: 2.2rem;
+}
+
+.category-card {
+  display: flex;
+  min-width: 0;
+  min-height: 390px;
+  padding: clamp(1.5rem, 2.8vw, 2rem);
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--blue-600);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 220ms ease, box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(52, 127, 145, 0.34);
+  box-shadow: var(--shadow-lg);
+}
+
+#services-category-overview .category-card h2 {
+  max-width: 100%;
+  margin: 0 0 1rem;
+  color: var(--navy-900);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.1rem, 1.55vw, 1.45rem);
+  font-weight: 660;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+
+.category-card p {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.72;
+}
+
+.category-card h3 {
+  margin: auto 0 0.8rem;
+  color: var(--blue-700);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.category-card a {
+  align-self: flex-start;
+}
+
+/* ---------- Individual service modules ---------- */
+
+#plumbing,
+#hvac {
+  background: var(--white);
+}
+
+#electrical,
+#home-maintenance {
+  background: var(--blue-50, #eff7f8);
+}
+
+.plumbing-content,
+.electrical-content,
+.hvac-content,
+.home-maintenance-content {
+  display: grid;
+  padding: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 0.82fr) minmax(360px, 1.18fr);
+  gap: 1.2rem clamp(3rem, 8vw, 7rem);
+  align-items: start;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.plumbing-content > h2,
+.plumbing-content > p,
+.plumbing-content > h3,
+.plumbing-content > a,
+.electrical-content > h2,
+.electrical-content > p,
+.electrical-content > h3,
+.electrical-content > a,
+.hvac-content > h2,
+.hvac-content > p,
+.hvac-content > h3,
+.hvac-content > a,
+.home-maintenance-content > h2,
+.home-maintenance-content > p,
+.home-maintenance-content > h3,
+.home-maintenance-content > a {
+  grid-column: 1;
+}
+
+.plumbing-content ul,
+.electrical-content ul,
+.hvac-content ul,
+.home-maintenance-content ul {
+  display: grid;
+  margin: 0;
+  padding: clamp(1.5rem, 3vw, 2.3rem);
+  grid-row: 1 / span 4;
+  grid-column: 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--cream-50);
+  list-style: none;
+}
+
+.plumbing-content li,
+.electrical-content li,
+.hvac-content li,
+.home-maintenance-content li {
+  padding: 0.8rem 0.9rem 0.8rem 1.3rem;
+  border-left: 3px solid var(--blue-600);
+  border-radius: 0 10px 10px 0;
+  background: var(--white);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+  box-shadow: 0 5px 14px rgba(8, 31, 46, 0.05);
+}
+
+.plumbing-content > h3,
+.electrical-content > h3,
+.hvac-content > h3,
+.home-maintenance-content > h3 {
+  margin: 0.8rem 0 0;
+  color: var(--navy-900);
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.plumbing-content > a,
+.electrical-content > a,
+.hvac-content > a,
+.home-maintenance-content > a {
+  width: fit-content;
+}
+
+/* ---------- Emergency services ---------- */
+
+#emergency-service {
+  background: var(--navy-950);
+}
+
+.emergency-services-content {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.emergency-services-content > h2,
+.emergency-services-content > p,
+.emergency-services-content > h3,
+.emergency-services-content > a,
+.important-notice {
+  grid-column: 1 / -1;
+}
+
+#emergency-service h2,
+#emergency-service > div > h3 {
+  color: var(--white);
+}
+
+#emergency-service > div > p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.emergency-services-content > p + p {
+  margin-top: 1rem;
+}
+
+.emergency-services-content > h3 {
+  margin: 2.2rem 0 0.2rem;
+  font: 650 clamp(1.15rem, 2vw, 1.4rem)/1.35 "Space Grotesk", sans-serif;
+}
+
+.emergency-card {
+  min-height: 210px;
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 5px solid var(--copper-500);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.16);
+  transition: transform 200ms ease, background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.emergency-card:nth-of-type(1) {
+  grid-column: 1 / span 5;
+}
+
+.emergency-card:nth-of-type(2) {
+  grid-column: 6 / -1;
+}
+
+.emergency-card:nth-of-type(3) {
+  grid-column: 3 / 11;
+}
+
+.emergency-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(206, 124, 70, 0.7);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.emergency-card h3 {
+  margin: 0 0 0.7rem;
+  color: var(--white);
+  font: 660 clamp(1.15rem, 2vw, 1.4rem)/1.3 "Space Grotesk", sans-serif;
+}
+
+.emergency-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+#emergency-service .contact-btn {
+  width: fit-content;
+  background: var(--copper-500);
+}
+
+#emergency-service .contact-btn:hover {
+  background: #dc8950;
+}
+
+.important-notice {
+  margin-top: 1rem;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid rgba(206, 124, 70, 0.42);
+  border-radius: 14px;
+  background: rgba(206, 124, 70, 0.1);
+}
+
+.important-notice p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+/* ---------- Service finder Q&A ---------- */
+
+#service-finder {
+  background: var(--cream-50);
+}
+
+.service-finder-content > h2,
+.service-finder-content > p {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.service-finder-content > p {
+  margin-bottom: 3rem;
+}
+
+.service-help-card {
+  display: grid;
+  max-width: 980px;
+  min-height: 120px;
+  margin: 1rem auto 0;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  grid-template-columns: minmax(0, 1.45fr) minmax(220px, 0.55fr);
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.service-help-card:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-help-card blockquote {
+  margin: 0;
+  color: var(--navy-900);
+  font: 580 clamp(1.05rem, 2vw, 1.3rem)/1.55 "Space Grotesk", sans-serif;
+}
+
+.help-recommendation {
+  margin: 0;
+  padding: 1rem 1.2rem;
+  border-radius: 999px;
+  background: var(--blue-100);
+  color: var(--blue-700);
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ---------- Final CTA ---------- */
+
+#final-cta {
+  background: linear-gradient(135deg, var(--blue-700), var(--navy-900) 75%);
+}
+
+.final-cta-content {
+  text-align: center;
+}
+
+#final-cta h2,
+#final-cta > div > p {
+  margin-inline: auto;
+  color: var(--white);
+}
+
+#final-cta > div > p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#final-cta .contact-btn,
+.request-help-btn {
+  min-width: 160px;
+  margin: 2rem 0.4rem 0;
+}
+
+#final-cta .contact-btn {
+  background: var(--copper-500);
+}
+
+.request-help-btn {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: var(--white);
+}
+
+#final-cta .contact-btn:hover,
+.request-help-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+#final-cta .contact-btn:hover {
+  background: #dc8950;
+}
+
+.request-help-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Large tablet ---------- */
+
+@media (max-width: 1040px) {
+  .services-category-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .category-card {
+    min-height: 330px;
+  }
+
+  .plumbing-content,
+  .electrical-content,
+  .hvac-content,
+  .home-maintenance-content {
+    grid-template-columns: minmax(0, 0.75fr) minmax(340px, 1.25fr);
+    gap: 1.2rem 2.5rem;
+  }
+
+  .plumbing-content ul,
+  .electrical-content ul,
+  .hvac-content ul,
+  .home-maintenance-content ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Tablet and mobile ---------- */
+
+@media (max-width: 780px) {
+  #services-hero,
+  #services-category-overview,
+  #plumbing,
+  #electrical,
+  #hvac,
+  #home-maintenance,
+  #emergency-service,
+  #service-finder,
+  #final-cta {
+    padding-inline: 1.15rem;
+  }
+
+  #services-hero {
+    min-height: 560px;
+  }
+
+  .plumbing-content,
+  .electrical-content,
+  .hvac-content,
+  .home-maintenance-content {
+    grid-template-columns: 1fr;
+  }
+
+  .plumbing-content > h2,
+  .plumbing-content > p,
+  .plumbing-content > h3,
+  .plumbing-content > a,
+  .electrical-content > h2,
+  .electrical-content > p,
+  .electrical-content > h3,
+  .electrical-content > a,
+  .hvac-content > h2,
+  .hvac-content > p,
+  .hvac-content > h3,
+  .hvac-content > a,
+  .home-maintenance-content > h2,
+  .home-maintenance-content > p,
+  .home-maintenance-content > h3,
+  .home-maintenance-content > a,
+  .plumbing-content ul,
+  .electrical-content ul,
+  .hvac-content ul,
+  .home-maintenance-content ul {
+    grid-row: auto;
+    grid-column: 1;
+  }
+
+  .plumbing-content ul,
+  .electrical-content ul,
+  .hvac-content ul,
+  .home-maintenance-content ul {
+    margin-block: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .emergency-card:nth-of-type(1),
+  .emergency-card:nth-of-type(2),
+  .emergency-card:nth-of-type(3) {
+    grid-column: 1 / -1;
+  }
+
+  .service-help-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .help-recommendation {
+    width: fit-content;
+    min-width: 230px;
+  }
+}
+
+/* ---------- Small mobile ---------- */
+
+@media (max-width: 560px) {
+  .services-hero-content h2 {
+    font-size: clamp(2.7rem, 14vw, 4.2rem);
+  }
+
+  .services-category-content {
+    grid-template-columns: 1fr;
+  }
+
+  .services-category-content > h2,
+  .services-category-content > p {
+    grid-column: 1;
+  }
+
+  .category-card {
+    min-height: auto;
+  }
+
+  .plumbing-content,
+  .electrical-content,
+  .hvac-content,
+  .home-maintenance-content {
+    padding: 1.6rem;
+  }
+
+  .plumbing-content ul,
+  .electrical-content ul,
+  .hvac-content ul,
+  .home-maintenance-content ul {
+    grid-template-columns: 1fr;
+  }
+
+  .emergency-card {
+    min-height: auto;
+  }
+
+  .service-help-card {
+    padding: 1.35rem;
+  }
+
+  .help-recommendation {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #final-cta .contact-btn,
+  .request-help-btn {
+    min-width: 135px;
+    margin-inline: 0.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card,
+  .emergency-card,
+  .service-help-card,
+  .plumbing-btn,
+  .electrical-btn,
+  .hvac-btn,
+  .home-maintenance-btn,
+  .contact-btn,
+  .request-help-btn {
+    transition: none;
+  }
+}

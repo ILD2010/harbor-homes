@@ -1,0 +1,404 @@
+:root {
+  --navy-950: #082433;
+  --navy-900: #0d2c3e;
+  --blue-700: #28677a;
+  --blue-600: #347f91;
+  --blue-100: #e7f2f4;
+  --cream-50: #f7f4ed;
+  --white: #ffffff;
+  --text: #17313d;
+  --muted: #60747d;
+  --line: rgba(13, 44, 62, 0.14);
+  --danger: #a33a32;
+  --dashboard-width: 1500px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --shadow-sm: 0 12px 32px rgba(8, 36, 51, 0.08);
+  --shadow-md: 0 22px 55px rgba(8, 36, 51, 0.13);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding-block: clamp(1rem, 3vw, 2.5rem);
+  padding-inline: max(clamp(1rem, 3vw, 2.5rem), calc((100vw - var(--dashboard-width)) / 2));
+  display: grid;
+  grid-template-columns: minmax(270px, 0.7fr) minmax(0, 1.7fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-content: start;
+  background:
+    radial-gradient(circle at 92% 3%, rgba(52, 127, 145, 0.12), transparent 26rem),
+    var(--cream-50);
+  color: var(--text);
+  font-family: "Manrope", sans-serif;
+  line-height: 1.6;
+}
+
+body > section {
+  width: 100%;
+  max-width: var(--dashboard-width);
+}
+
+h1,
+h2,
+p {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Main welcome panel ---------- */
+
+#dashboard-welcome {
+  min-height: clamp(280px, 37vw, 430px);
+  margin-inline: auto;
+  padding: clamp(2rem, 6vw, 5rem);
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.13), transparent 19rem),
+    linear-gradient(135deg, var(--navy-950), var(--navy-900) 58%, var(--blue-700));
+  box-shadow: var(--shadow-md);
+}
+
+#dashboard-welcome::after {
+  width: clamp(190px, 30vw, 390px);
+  aspect-ratio: 1;
+  position: absolute;
+  right: -10%;
+  bottom: -58%;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  content: "";
+}
+
+#dashboard-welcome p {
+  margin: 0 0 0.75rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(0.76rem, 1.3vw, 0.9rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+#dashboard-welcome h1 {
+  max-width: 880px;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2.25rem, 6.5vw, 5.25rem);
+  font-weight: 650;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+/* ---------- Dashboard cards ---------- */
+
+#account-summary,
+#recent-requests,
+#account-actions {
+  padding: clamp(1.4rem, 3vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+#account-summary {
+  margin-left: auto;
+  grid-column: 1;
+}
+
+#recent-requests {
+  margin-right: auto;
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-content: start;
+  border-top: 5px solid var(--blue-600);
+}
+
+#account-actions {
+  margin-inline: auto;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+#account-summary h2,
+#recent-requests h2,
+#account-actions h2 {
+  margin: 0 0 1.35rem;
+  color: var(--navy-900);
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+#recent-requests > h2 {
+  grid-column: 1 / -1;
+}
+
+#account-summary p {
+  margin: 0;
+  padding: 0.9rem 0;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+#account-summary p:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+#account-summary strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--navy-900);
+  font-size: 0.78rem;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+#recent-requests > p {
+  min-height: 95px;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  grid-column: 1 / -1;
+  color: var(--muted);
+  line-height: 1.7;
+  border: 1px dashed rgba(52, 127, 145, 0.32);
+  border-radius: 14px;
+  background: var(--blue-100);
+}
+
+/* Each Jinja request is presented as its own dashboard card. */
+
+.service-request {
+  min-width: 0;
+  padding: clamp(1rem, 1.8vw, 1.35rem);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: linear-gradient(180deg, var(--white), #fbfcfc);
+  box-shadow: 0 8px 22px rgba(8, 36, 51, 0.065);
+}
+
+.service-request h3 {
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.75rem;
+  color: var(--navy-900);
+  border-bottom: 2px solid var(--blue-100);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.25;
+}
+
+.service-request p {
+  margin: 0;
+  padding: 0.42rem 0;
+  color: var(--muted);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.service-request strong {
+  color: var(--navy-900);
+  font-weight: 750;
+}
+
+/* ---------- Dashboard actions ---------- */
+
+#recent-requests > a,
+#account-actions > a {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 170ms ease, background-color 170ms ease,
+    border-color 170ms ease, color 170ms ease, box-shadow 170ms ease;
+}
+
+#recent-requests > a {
+  width: fit-content;
+  margin-top: 0.25rem;
+  grid-column: 1 / -1;
+  color: var(--white);
+  background: var(--navy-900);
+}
+
+#recent-requests > a:hover {
+  transform: translateY(-2px);
+  background: var(--blue-700);
+  box-shadow: 0 10px 22px rgba(13, 44, 62, 0.18);
+}
+
+#account-actions h2 {
+  margin: 0;
+}
+
+#account-actions > a {
+  color: var(--navy-900);
+  border-color: var(--line);
+  background: var(--white);
+}
+
+#account-actions > a:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue-600);
+  background: var(--blue-100);
+}
+
+#account-actions > a:last-child {
+  color: var(--danger);
+  border-color: rgba(163, 58, 50, 0.25);
+}
+
+#account-actions > a:last-child:hover {
+  color: var(--white);
+  border-color: var(--danger);
+  background: var(--danger);
+}
+
+#recent-requests > a:focus-visible,
+#account-actions > a:focus-visible {
+  outline: 3px solid var(--blue-600);
+  outline-offset: 3px;
+}
+
+/* ---------- Tablet and mobile ---------- */
+
+@media (max-width: 1050px) {
+  body {
+    grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.35fr);
+  }
+
+  #recent-requests {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    padding: 1rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #dashboard-welcome,
+  #account-summary,
+  #recent-requests,
+  #account-actions {
+    margin-inline: auto;
+    grid-column: 1;
+  }
+
+  #dashboard-welcome {
+    min-height: 300px;
+    padding: 2rem 1.35rem;
+    border-radius: var(--radius-md);
+  }
+
+  #account-summary,
+  #recent-requests,
+  #account-actions {
+    padding: 1.35rem;
+  }
+
+  #recent-requests {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  #account-actions {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  #account-actions h2 {
+    margin-bottom: 0.35rem;
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.75rem;
+    gap: 0.85rem;
+  }
+
+  #dashboard-welcome {
+    min-height: 270px;
+  }
+
+  #dashboard-welcome h1 {
+    font-size: clamp(2rem, 12vw, 3.2rem);
+  }
+
+  #account-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #account-actions h2 {
+    grid-column: 1;
+  }
+
+  #recent-requests > a,
+  #account-actions > a {
+    width: 100%;
+  }
+
+  .service-request {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  #recent-requests > a,
+  #account-actions > a {
+    transition: none;
+  }
+}

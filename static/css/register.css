@@ -1,0 +1,344 @@
+/* =========================================================
+   Harbor Homes — Registration Page
+   Simple, high-contrast account creation layout.
+   Header and footer remain in global.css.
+   ========================================================= */
+
+/* ---------- Registration hero ---------- */
+
+#register-hero {
+  display: grid;
+  min-height: clamp(380px, 52vh, 540px);
+  padding: clamp(5rem, 9vw, 8rem) 1.5rem;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 8%, transparent 0 190px, rgba(255, 255, 255, 0.06) 191px 192px, transparent 193px),
+    linear-gradient(110deg, var(--navy-950), var(--navy-900) 65%, var(--blue-700));
+}
+
+.register-hero-content {
+  width: min(100%, var(--page-width));
+  margin-inline: auto;
+}
+
+.register-hero-content h2 {
+  max-width: 880px;
+  margin: 0;
+  color: var(--white);
+  font: 630 clamp(2.8rem, 6vw, 5.4rem)/1 "Space Grotesk", sans-serif;
+  letter-spacing: -0.055em;
+}
+
+.register-hero-content p {
+  max-width: 700px;
+  margin: 1.6rem 0 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  line-height: 1.8;
+}
+
+/* ---------- Registration form ---------- */
+
+#register-form {
+  padding: var(--section-space) 1.5rem;
+  background: var(--cream-50);
+}
+
+.register-form-content {
+  width: min(100%, 650px);
+  margin-inline: auto;
+  padding: clamp(1.6rem, 5vw, 3.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.register-form-content h2 {
+  margin: 0 0 1.5rem;
+  color: var(--navy-900);
+  font: 650 clamp(1.9rem, 4vw, 2.8rem)/1.12 "Space Grotesk", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+#form-register {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 0.65rem 0.85rem;
+}
+
+#form-register label:not([for="privacy-policy"]):not([for="show-passwords"]) {
+  align-self: end;
+  grid-column: 1 / -1;
+  color: var(--navy-900);
+  font-size: 0.86rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+label[for="full-name"] { grid-row: 1; }
+#full-name { grid-row: 2; }
+
+label[for="email"] { grid-row: 3; }
+#email { grid-row: 4; }
+
+label[for="phone-number"] { grid-row: 5; }
+#phone-number { grid-row: 6; }
+
+label[for="password"] { grid-row: 7; }
+#password { grid-row: 8; }
+#password-error { grid-row: 9; }
+
+label[for="confirm-password"] { grid-row: 10; }
+#confirm-password { grid-row: 11; }
+#confirm-password-error { grid-row: 12; }
+
+#form-register input:not([type="checkbox"]) {
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0.85rem 1rem;
+  grid-column: 1 / -1;
+  border: 1px solid rgba(13, 44, 62, 0.22);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--text);
+  font: 500 1rem/1.4 "Manrope", sans-serif;
+  transition: border-color 180ms ease, box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+#form-register input:not([type="checkbox"]):hover {
+  border-color: rgba(52, 127, 145, 0.5);
+}
+
+#form-register input:not([type="checkbox"]):focus {
+  outline: none;
+  border-color: var(--blue-600);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(52, 127, 145, 0.14);
+}
+
+#show-passwords,
+#privacy-policy {
+  width: 20px;
+  height: 20px;
+  margin: 0.12rem 0 0;
+  grid-column: 1;
+  align-self: start;
+  accent-color: var(--blue-700);
+  cursor: pointer;
+}
+
+#show-passwords {
+  grid-row: 13;
+}
+
+#privacy-policy {
+  grid-row: 14;
+}
+
+label[for="show-passwords"],
+label[for="privacy-policy"] {
+  margin: 0;
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 550;
+  line-height: 1.65;
+  cursor: pointer;
+}
+
+label[for="show-passwords"] {
+  grid-row: 13;
+  color: var(--navy-900);
+  font-weight: 700;
+}
+
+label[for="privacy-policy"] {
+  grid-row: 14;
+}
+
+#privacy-checkbox-error {
+  grid-row: 15;
+}
+
+.form-error {
+  display: none;
+  margin: -0.15rem 0 0.25rem;
+  grid-column: 1 / -1;
+  color: #a1261f;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.form-error:not(:empty) {
+  display: block;
+}
+
+#form-register input[aria-invalid="true"],
+#form-register input.is-invalid,
+#form-register input:user-invalid {
+  border-color: #b9382f;
+  background: #fff8f7;
+  box-shadow: 0 0 0 3px rgba(185, 56, 47, 0.12);
+}
+
+.privacy-policy-btn {
+  color: var(--blue-700);
+  font-weight: 800;
+  text-decoration-color: rgba(40, 103, 122, 0.4);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.privacy-policy-btn:hover {
+  color: var(--copper-600);
+  text-decoration-color: var(--copper-600);
+}
+
+.register-submit-btn,
+.register-btn,
+#register-btn,
+.register-form-content button[type="submit"] {
+  display: inline-flex;
+  min-height: 52px;
+  margin-top: 1.2rem;
+  padding: 0.9rem 1.5rem;
+  grid-column: 1 / -1;
+  grid-row: 16;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+  border: 0;
+  border-radius: 999px;
+  background: var(--navy-900);
+  color: var(--white);
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.register-submit-btn:hover,
+.register-btn:hover,
+#register-btn:hover,
+.register-form-content button[type="submit"]:hover {
+  transform: translateY(-2px);
+  background: var(--blue-700);
+  box-shadow: 0 12px 24px rgba(13, 44, 62, 0.2);
+}
+
+/* ---------- Account privacy information ---------- */
+
+#register-privacy {
+  display: none;
+}
+
+.register-privacy-content {
+  width: min(calc(100% - 3rem), 900px);
+  margin: var(--section-space) auto;
+  padding: clamp(1.7rem, 4vw, 3rem);
+  border: 1px solid rgba(52, 127, 145, 0.2);
+  border-left: 6px solid var(--blue-600);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--blue-100);
+}
+
+.register-privacy-content h2 {
+  margin: 0 0 1rem;
+  color: var(--navy-900);
+  font: 650 clamp(1.65rem, 3.5vw, 2.35rem)/1.15 "Space Grotesk", sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.register-privacy-content p {
+  max-width: 75ch;
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+
+.register-privacy-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* When the privacy content is moved inside its section as recommended. */
+
+#register-privacy:has(.register-privacy-content) {
+  display: block;
+  padding: var(--section-space) 1.5rem;
+  background: var(--white);
+}
+
+#register-privacy > .register-privacy-content {
+  margin-block: 0;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  #register-hero,
+  #register-form,
+  #register-privacy:has(.register-privacy-content) {
+    padding-inline: 1.15rem;
+  }
+
+  #register-hero {
+    min-height: 430px;
+  }
+
+  .register-hero-content h2 {
+    font-size: clamp(2.6rem, 13vw, 4rem);
+  }
+
+  .register-form-content {
+    padding: 1.4rem;
+    border-radius: var(--radius-md);
+  }
+
+  .register-form-content input:not([type="checkbox"]) {
+    min-height: 54px;
+    font-size: 1rem;
+  }
+
+  #form-register {
+    grid-template-columns: 22px minmax(0, 1fr);
+  }
+
+  .register-submit-btn,
+  .register-btn,
+  #register-btn,
+  .register-form-content button[type="submit"] {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .register-privacy-content {
+    width: min(calc(100% - 2.3rem), 900px);
+    padding: 1.4rem;
+  }
+
+  #register-privacy > .register-privacy-content {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .register-form-content input,
+  .privacy-policy-btn,
+  .register-submit-btn,
+  .register-btn,
+  #register-btn,
+  .register-form-content button[type="submit"] {
+    transition: none;
+  }
+}

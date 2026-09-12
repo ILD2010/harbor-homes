@@ -1,0 +1,192 @@
+:root {
+    --login-card-width: 35rem;
+}
+
+#login-hero {
+    min-height: clamp(21rem, 42vw, 30rem);
+    display: grid;
+    align-content: center;
+    gap: 1.25rem;
+    padding: clamp(4.5rem, 9vw, 7.5rem) max(1.25rem, calc((100% - var(--page-width)) / 2));
+    color: var(--white);
+    background:
+        radial-gradient(circle at 82% 20%, rgba(255, 255, 255, 0.13), transparent 28rem),
+        linear-gradient(135deg, var(--navy-950), var(--blue-700));
+}
+
+#login-hero h2,
+#login-hero p {
+    width: min(100%, 48rem);
+    margin: 0;
+}
+
+#login-hero h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.35rem, 6vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+}
+
+#login-hero p {
+    color: rgba(255, 255, 255, 0.84);
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    line-height: 1.8;
+}
+
+#login-form {
+    padding: clamp(4rem, 8vw, 7rem) 1.25rem;
+    background: var(--cream-50);
+}
+
+.login-form-content {
+    width: min(100%, var(--login-card-width));
+    margin-inline: auto;
+    padding: clamp(1.5rem, 5vw, 3rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.65rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.form-error {
+  display: block;
+  margin: -0.15rem 0 0.25rem;
+  grid-column: 1 / -1;
+  color: #a1261f;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.login-form-content h2 {
+    margin: 0 0 1.25rem;
+    color: var(--navy-950);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.login-form-content label {
+    margin-top: 0.55rem;
+    color: var(--navy-900);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.login-form-content input {
+    width: 100%;
+    min-height: 3.35rem;
+    padding: 0.8rem 1rem;
+    color: var(--text);
+    font: inherit;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.login-form-content input:hover {
+    border-color: var(--blue-600);
+}
+
+.login-form-content input:focus-visible {
+    outline: none;
+    border-color: var(--blue-600);
+    box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.16);
+}
+
+.login-btn,
+.register-btn {
+    min-height: 3.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.3rem;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.login-btn {
+    width: 100%;
+    margin-top: 1.35rem;
+    color: var(--white);
+    background: var(--navy-900);
+    border-color: var(--navy-900);
+}
+
+.login-btn:hover {
+    background: var(--blue-700);
+    border-color: var(--blue-700);
+    transform: translateY(-2px);
+}
+
+.login-form-content h3 {
+    margin: 1.75rem 0 0.35rem;
+    padding-top: 1.75rem;
+    color: var(--muted);
+    font-size: 0.98rem;
+    font-weight: 650;
+    line-height: 1.6;
+    text-align: center;
+    border-top: 1px solid var(--line);
+}
+
+.register-btn {
+    justify-self: center;
+    min-width: 10rem;
+    color: var(--navy-900);
+    background: transparent;
+    border-color: var(--navy-900);
+}
+
+.register-btn:hover {
+    color: var(--white);
+    background: var(--navy-900);
+    transform: translateY(-2px);
+}
+
+.login-btn:focus-visible,
+.register-btn:focus-visible {
+    outline: 3px solid var(--blue-600);
+    outline-offset: 3px;
+}
+
+@media (max-width: 40rem) {
+    #login-hero {
+        min-height: 22rem;
+        padding-block: 4rem;
+    }
+
+    #login-form {
+        padding: 3rem 1rem;
+    }
+
+    .login-form-content {
+        padding: 1.5rem;
+        border-radius: var(--radius-md);
+    }
+
+    .register-btn {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login-form-content input,
+    .login-btn,
+    .register-btn {
+        transition: none;
+    }
+}  
